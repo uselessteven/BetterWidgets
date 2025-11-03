@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./styles.css">
+    <title>Daily feelings...</title>
+</head>
+<body>
+    <div class="dashboardDiv">
+        <div class="emotionDiv">
+            <h2>How I feel today ?</h2>
+            <div class="emoBtn">
+                <button id="btn1" class="btn"><img src="../../assets/happy.png" alt="happy face">Happy</button>
+                <button id="btn2" class="btn"><img src="../../assets/loved.png" alt="loved face">Loved</button>
+                <button id="btn3" class="btn"><img src="../../assets/confident.png" alt="confident face">Confident</button>
+                <button id="btn4" class="btn"><img src="../../assets/playful.png" alt="playful face">Playful</button>
+                <button id="btn5" class="btn"><img src="../../assets/embarrassed.png" alt="embarrassed face">Embarrassed</button>
+                <button id="btn6" class="btn"><img src="../../assets/angry.png" alt="angry face">Angry</button>
+                <button id="btn7" class="btn"><img src="../../assets/scared.png" alt="scared face">Scared</button>
+                <button id="btn8" class="btn"><img src="../../assets/sad.png" alt="sad face">Sad</button>                        
+            </div>
+
+        </div>
+
+        <div class="bottomDiv">
+            <div class="explainFeels">
+                <h2>What made me feel that way ?</h2>
+                <textarea name="feelInput" id="feelInput" rows="4" cols="48"></textarea>
+            </div>
+
+            <div class="wishTmr">
+                <h2>What I wish for myself tomorrow ?</h2>
+                <textarea name="wishInput" id="wishInput" rows="4" cols="48"></textarea>
+            </div>            
+        </div>
+        <button id="save-btn">Save for today</button>
+    </div>
+
+    
+    <script src="writeToday.js"></script>
+</body>
+</html>

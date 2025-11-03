@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Valentine's Bouquet !</title>
+  </head>
+
+  <body>
+    <div class="mainDiv">
+      <img src="../../assets/bouquet.gif" alt="Bouquet de fleurs" />
+      <h1>My Valentine's Bouquet</h1>
+      <hr />
+      <p>
+        Compose your unique bouquet, choose a cute vase and send it to your
+        loved one &#9829;
+      </p>
+      <button id="create-bouquet">Create my first bouquet !</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("create-bouquet")
+        .addEventListener("click", () => {
+          window.electronAPI.loadPage("src/bouquete/chooseFlowers.html");
+        });
+    </script>
+  </body>
+</html>

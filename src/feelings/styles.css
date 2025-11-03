@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gamja Flower';
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.mainDiv {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleDiv{
+    width: 600px;
+    overflow: hidden;
+    text-align: center;
+}
+.titleDiv .text{
+    position: relative;
+    color: #4070F4;
+    font-size: 40px;
+    font-weight: 600;
+}
+.titleDiv .text.immobile{
+    color: #FFF;
+}
+.text.mobile:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #010718;
+    border-left: 2px solid #fff;
+    animation: animate 4s steps(12) infinite;
+}
+.text.mobile.bg-ACC794:before {
+    background-color: #ACC794;
+}
+
+.text.mobile.bg-283593:before {
+    background-color: #283593;
+}
+
+.text.mobile.bg-FF7704:before {
+    background-color: #FF7704;
+}
+@keyframes animate{
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0%;
+    }
+}
+.btnDiv {
+    margin: 48px;
+    display: flex;
+    flex-direction: column;
+}
+#start-btn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #222;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+}
+#start-btn:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/*------ WRITING PAGE ------*/
+
+.dashboardDiv {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ACC794;
+    color: #fff;
+    transition: background-color 0.4s ease-in-out;
+}
+.emotionDiv {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.emotionDiv h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+.emoBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.btn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    max-height: 72px;
+    padding: 8px 0;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background-color: #739159;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+.btn img {
+    width: 32px;
+    height: 32px;
+}
+.btn:hover {
+    transform: scale(1.05) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+.selected-btn {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid white;
+    transform: scale(1.1);
+}
+.hover-bg1 {
+    background-color: #ACC794;
+}
+.hover-bg2 {
+    background-color: #FFB3C8;
+}
+.hover-bg3 {
+    background-color: #75E4FF;
+}
+.hover-bg4 {
+    background-color: #FFCE3F;
+}
+.hover-bg5 {
+    background-color: #83da79;
+}
+.hover-bg6 {
+    background-color: #E88015;
+}
+.hover-bg7 {
+    background-color: #7897D4;
+}
+.hover-bg8 {
+    background-color: #A4B4D4;
+}
+.hover-btn-bg1 {
+    background-color: #739159;
+}
+.hover-btn-bg2 {
+    background-color: #d16282;
+}
+.hover-btn-bg3 {
+    background-color: #41a7c0;
+}
+.hover-btn-bg4 {
+    background-color: #cf9f0f;
+}
+.hover-btn-bg5 {
+    background-color: #59b84e;
+}
+.hover-btn-bg6 {
+    background-color: #aa5907;
+}
+.hover-btn-bg7 {
+    background-color: #3a5ca1;
+}
+.hover-btn-bg8 {
+    background-color: #506794;
+}
+.bottomDiv {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+.explainFeels h2 {
+    font-size: 24px;
+    margin-bottom: 16px;    
+}
+.wishTmr h2 {
+    font-size: 24px;
+    margin-bottom: 16px;    
+}
+.bottomDiv textarea {
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    width: 100%; 
+    height: calc(1.5em * 4); /* Approx height for 4 rows */
+    line-height: 1.5em; /* Ensures proper row spacing */
+    overflow: hidden; /* Prevents scrolling */
+    resize: none; /* Disables resizing */
+}
+#save-btn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #222;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+}
+#save-btn:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* Optional: Prevent clicks on the hidden button */
+}

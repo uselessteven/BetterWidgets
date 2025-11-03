@@ -1,0 +1,73 @@
+const path = require("path");
+const { app, BrowserWindow, ipcMain } = require("electron");
+const fs = require("fs");
+
+let win;
+
+function createWindow() {
+  win = new BrowserWindow({
+    width: 1024,
+    height: 600,
+    frame: false,
+    icon: path.join(__dirname, "assets/icon.png"),
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: path.join(__dirname, "preload.js"),
+    },
+  });
+
+  win.removeMenu();
+  win.loadFile("src/index.html");  
+  //win.webContents.openDevTools();
+  ipcMain.on("minimize-window", () => win.minimize());
+  ipcMain.on("maximize-window", () => {
+    if (win.isMaximized()) win.unmaximize();
+    else win.maximize();
+  });
+  ipcMain.on("close-window", () => win.close());
+  ipcMain.on("load-page", (event, page) => win.loadFile(page));
+    ipcMain.on("capture-screenshot", async () => {
+    try {
+      const screenshotPath = await captureScreenshot();
+      win.webContents.send('screenshot-saved', screenshotPath);
+    } catch (error) {
+      console.error('Error capturing screenshot:', error);
+    }
+  });
+  win.on("maximize", () => win.webContents.send("window-maximized"));
+  win.on("unmaximize", () => win.webContents.send("window-restored"));
+}
+
+app.whenReady().then(() => {
+  createWindow();
+  app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+
+  ipcMain.handle("take-screenshot", async () => {
+    const image = await win.webContents.capturePage();
+    const screenshotPath = path.join(app.getPath("desktop"), `screenshot-${Date.now()}.png`);
+    fs.writeFileSync(screenshotPath, image.toPNG());
+    return screenshotPath;
+  });
+});
+
+function captureScreenshot() {
+  return new Promise((resolve, reject) => {
+    win.capturePage().then(image => {
+      //Save screenshot to a file
+      const filePath = path.join(app.getPath('downloads'), 'screenshot.png');
+      const imageBuffer = image.toPNG();
+      fs.writeFileSync(filePath, imageBuffer);
+      resolve(filePath);
+    }).catch(err => {
+      console.error('Error capturing the application window:', err);
+      reject('Error capturing the application window');
+    });
+  });
+}
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") app.quit();
+});

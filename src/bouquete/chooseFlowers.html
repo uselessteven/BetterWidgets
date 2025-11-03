@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="chooseFlowers.js" defer></script>
+
+    <title>Valentine's Bouquet !</title>
+  </head>
+
+  <body>
+    <div class="flowersDiv">
+      <h1>Choose your flowers <br> <span id="flowersLeft"></span></h1>
+
+      <div class="carousel" data-carousel>
+        <button class="carousel-button prev" data-carousel-button="prev">
+          <img src="../../assets/arrow-left.png" alt="" />
+        </button>
+
+        <button class="carousel-button next" data-carousel-button="next">
+          <img src="../../assets/arrow-right.png" alt="" />
+        </button>
+
+        <ul data-slides>
+          <li class="slide" data-active id="rose">
+            <img src="../../assets/rose.gif" alt="Flower 1" />
+          </li>
+
+          <li class="slide" id="lily">
+            <img src="../../assets/lys.gif" alt="Flower 2" />
+          </li>
+
+          <li class="slide" id="sunflower">
+            <img src="../../assets/sunflower.gif" alt="Flower 3" />
+          </li>
+
+          <li class="slide" id="tulip">
+            <img src="../../assets/tulip.gif" alt="Flower 4" />
+          </li>
+
+          <li class="slide" id="babies-breath">
+            <img src="../../assets/babies-breath.gif" alt="Flower 5" />
+          </li>
+
+          <li class="slide" id="daisy">
+            <img src="../../assets/daisy.gif" alt="Flower 6" />
+          </li>
+        </ul>
+      </div>
+      <button class="next-step">I want this !</button>
+    </div>
+  </body>
+</html>

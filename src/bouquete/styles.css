@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Kode+Mono:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*------ HOME PAGE ------*/
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(239, 170, 176);
+    background-image: url('../../assets/grid.png');
+    background-size: cover;
+    background-blend-mode: overlay;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainDiv img {
+    width: 256px;
+    height:256px;
+}
+
+.mainDiv h1 {
+    font-family: 'Bagel Fat One';
+    color: #fff;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.mainDiv hr {
+    width: 400px;
+    margin-bottom: 16px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+}
+
+.mainDiv p {
+    width: 400px;
+    margin-bottom: 40px;
+    font-family: 'Kode Mono';
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.mainDiv button {
+    font-family: 'Kode Mono';
+    color: #fff;
+    padding: 16px;
+    background-color: #E86975;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #222;
+}
+
+.mainDiv button:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/*------ CHOOSE YOUR FLOWERS ------*/
+
+.flowersDiv {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(239, 170, 176);
+    background-image: url('../../assets/grid.png');
+    background-size: cover;
+    background-blend-mode: overlay;
+    justify-content: center;
+    align-items: center;
+}
+
+.flowersDiv h1 {
+    font-family: 'Bagel Fat One';
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.flowersDiv .carousel {
+    width: 256px;
+    height: 256px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.slide {
+    width: 256px;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    list-style: none;
+    opacity: 0;
+}
+
+.slide > img {
+    display: block;
+    width: 256px;
+    height: 256px;
+}
+
+.slide[data-active] {
+    opacity: 1;
+}
+
+.carousel-button {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 0 .5rem;
+}
+.carousel-button img {
+    width: 64px;
+    height: 64px;
+}
+
+.carousel-button.prev {
+    left: -80px;
+}
+.carousel-button.next {
+    right: -80px;
+}
+
+.flowersDiv .next-step {
+    font-family: 'Kode Mono';
+    color: #fff;
+    padding: 16px;
+    background-color: #E86975;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #222;
+}
+
+.flowersDiv .next-step:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/*------ CHOOSE YOUR VASE ------*/
+
+.vaseDiv {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(239, 170, 176);
+    background-image: url('../../assets/grid.png');
+    background-size: cover;
+    background-blend-mode: overlay;
+    justify-content: center;
+    align-items: center;
+}
+
+.vaseDiv h1 {
+    font-family: 'Bagel Fat One';
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.vaseDiv .carousel {
+    width: 256px;
+    height: 256px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.slide {
+    width: 256px;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    list-style: none;
+    opacity: 0;
+}
+
+.slide > img {
+    display: block;
+    width: 256px;
+    height: 256px;
+}
+
+.slide[data-active] {
+    opacity: 1;
+}
+
+.carousel-button {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 0 .5rem;
+}
+.carousel-button img {
+    width: 64px;
+    height: 64px;
+}
+
+.carousel-button.prev {
+    left: -80px;
+}
+.carousel-button.next {
+    right: -80px;
+}
+
+.vaseDiv .next-step {
+    font-family: 'Kode Mono';
+    color: #fff;
+    padding: 16px;
+    background-color: #E86975;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #222;
+}
+
+.vaseDiv .next-step:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/*------ WRITE YOUR MESSAGE ------*/
+
+.msgDiv {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(239, 170, 176);
+    background-image: url('../../assets/grid.png');
+    background-size: cover;
+    background-blend-mode: overlay;
+    justify-content: center;
+    align-items: center;
+}
+
+.msgDiv h1 {
+    font-family: 'Bagel Fat One';
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.msgDiv label {
+    margin-bottom: 8px;
+    font-family: 'Kode Mono';
+    color: #fff;
+    font-size: 14px;
+}
+
+.msgDiv input {
+    border: none;
+    border-radius: 25px;
+    height: 24px;
+    margin-bottom: 40px;
+    padding: 16px;
+}
+
+.msgDiv .final-step {
+    font-family: 'Kode Mono';
+    color: #fff;
+    padding: 16px;
+    background-color: #E86975;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #222;
+}
+
+.msgDiv .final-step:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+/*------ RENDERING BOUQUET ------*/
+
+.bouquetDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(239, 170, 176);
+    background-image: url('../../assets/grid.png');
+    background-size: cover;
+    background-blend-mode: overlay;
+    text-align: center;
+}
+
+.bouquetDiv h1 {
+    font-family: 'Bagel Fat One';
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.bouquet {
+    position: relative;
+    width: 200px;
+    height: 300px;
+}
+
+.vase-layer {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-51%);
+    z-index: 5;
+}
+
+.flower-layer {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 20px;
+    z-index: 1;
+    transform-origin: bottom center;
+}
+
+#flower1 { transform: rotate(-15deg); z-index: 1; }
+#flower2 { transform: rotate(-5deg); z-index: 2; }
+#flower3 { transform: rotate(5deg); z-index: 3; }
+#flower4 { transform: rotate(15deg); z-index: 4; }
+
+.bouquetDiv p {
+    font-family: 'Kode Mono';
+    color: #fff;
+    font-size: 16px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.bouquetDiv #screenshot-btn {
+    font-family: 'Kode Mono';
+    color: #fff;
+    padding: 16px;
+    background-color: #E86975;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #222;
+}
+
+.bouquetDiv #screenshot-btn:hover {
+    transform: scale(1.1) perspective(1px);
+    transition: 0.3 ease;
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+

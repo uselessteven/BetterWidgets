@@ -2,11 +2,54 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>BetterWidgets</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div id="titlebar">
+      <img id="min-btn" src="../assets/minimizar.png" alt="Minimizar">
+      <img id="max-btn" src="../assets/maximizar.png" alt="Maximizar">
+      <img id="close-btn" src="../assets/cerrar.png" alt="Cerrar">
+    </div>
+
+    <div id="fixed-div">
+      <img src="../assets/interfaz-clima.png" alt="Imagen fija" />
+    </div>
+
+    <div style="padding: 50px;">
+      <button id="todo-btn">TO DO LIST</button>      
+      <button id="feelings-btn">FEELINGS</button>
+      <button id="pomodoro-btn">POMODORO</button>
+      <button id="bouquet-btn">BOUQUET</button>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const minBtn = document.getElementById("min-btn");
+        const maxBtn = document.getElementById("max-btn");
+        const closeBtn = document.getElementById("close-btn");
+        const todoBtn = document.getElementById("todo-btn");
+        const feelingsBtn = document.getElementById("feelings-btn");
+        const pomodotoBtn = document.getElementById("pomodoro-btn");
+        const bouquetBtn = document.getElementById("bouquet-btn");
+
+        todoBtn.addEventListener("click", () => {window.electronAPI.loadPage("src/todo-list/todo.html");})
+        feelingsBtn.addEventListener("click", () => {window.electronAPI.loadPage("src/feelings/index.html");})
+        pomodotoBtn.addEventListener("click", () => {window.electronAPI.loadPage("src/pomodoro/index.html");})
+        bouquetBtn.addEventListener("click", () => {window.electronAPI.loadPage("src/bouquete/chooseFlowers.html");})
+
+        if (minBtn) minBtn.addEventListener("click", () => window.electronAPI.minimize());
+        if (maxBtn) maxBtn.addEventListener("click", () => window.electronAPI.maximize());
+        if (closeBtn) closeBtn.addEventListener("click", () => window.electronAPI.close());
+
+        window.electronAPI.onMaximize(() => {
+          maxBtn.src = "../assets/mini-maxi.png";
+        });
+
+        window.electronAPI.onRestore(() => {
+          maxBtn.src = "../assets/maximizar.png";
+        });
+      });
+    </script>
   </body>
 </html>
