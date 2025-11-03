@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +10,6 @@ body {
 }
 
 /*------ HOME PAGE ------*/
-
 .mainDiv {
     display: flex;
     flex-direction: column;
@@ -23,7 +20,7 @@ body {
 }
 
 .mainDiv h1 {
-    font-family: 'Modak';
+    font-family: "VT323", monospace;
     font-weight: 400;
     font-size: 48px;
     color: #FEF6F0;
@@ -46,7 +43,7 @@ body {
 }
 
 #start-btn {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 24px;
     color: #FEF6F0;
     background-color: #97A085;
@@ -55,6 +52,7 @@ body {
     padding: 8px 24px;
     box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
 }
+
 #start-btn:hover {
     transform: scale(1.1) perspective(1px);
     transition: 0.3 ease;
@@ -62,7 +60,6 @@ body {
 }
 
 /*------ DASHBOARD ------*/
-
 .dashDiv {
     display: flex;
     flex-direction: column;
@@ -95,21 +92,24 @@ body {
     flex-direction: column;
     gap: 12px;
 }
+
 #day {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 20px;
     font-weight: 600;
 }
+
 #number {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 32px;
     color: #FEF6F0;
     background-color: #6E763F;
     padding: 8px 12px;
     border-radius: 50px;
 }
+
 #month {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 16px;
 }
 
@@ -117,7 +117,7 @@ body {
     width: 66%;
     height: 100%;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
 }
 
 .progression {
@@ -132,22 +132,26 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .progression h3 {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 20px;
     margin-bottom: 8px;
     font-weight: 600;
 }
+
 #progress-bar {
     appearance: none;
     height: 16px;
     width: 70%;
     border-radius: 10px;
 }
+
 #progress-bar::-webkit-progress-bar {
     background-color: #CAC7B1;
     border-radius: 10px;
 }
+
 #progress-bar::-webkit-progress-value {
     background-color: #6E763F;
     border-radius: 10px;
@@ -160,12 +164,14 @@ body {
     margin-top: 16px;
     justify-content: space-between;
 }
+
 .add-task input {
     outline: none;
     border: none;
     padding: 14px;
     border-radius: 50px;
 }
+
 .add-task button {
     font-size: 24px;
     color: #FEF6F0;
@@ -175,6 +181,7 @@ body {
     border: none;
     border-radius: 16px;
 }
+
 #add-btn {
     cursor: pointer;
 }
@@ -192,18 +199,20 @@ body {
     padding: 16px;
     gap: 14px;
 }
+
 .bottom-section .bx {
     color: #151E08;
     margin-right: 16px;
 }
+
 .bottom-section p span {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     color: #151E08;
     cursor: pointer;
 }
 
 #finish-btn {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 24px;
     color: #FEF6F0;
     background-color: #97A085;
@@ -212,6 +221,7 @@ body {
     padding: 8px 24px;
     box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
 }
+
 #finish-btn:hover {
     transform: scale(1.1) perspective(1px);
     transition: 0.3 ease;
@@ -219,7 +229,6 @@ body {
 }
 
 /*------ CONCLUSION ------*/
-
 .finalDiv {
     display: flex;
     flex-direction: column;
@@ -231,7 +240,7 @@ body {
 }
 
 #final-title {
-    font-family: 'Modak';
+    font-family: "VT323", monospace;
     font-weight: 400;
     font-size: 48px;
     color: #FEF6F0;
@@ -257,13 +266,13 @@ body {
 }
 
 #conclusion {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 24px;
     margin-bottom: 16px;
 }
 
 #restart-btn {
-    font-family: 'Pixelify Sans';
+    font-family: "VT323", monospace;
     font-size: 24px;
     color: #FEF6F0;
     background-color: #97A085;
@@ -272,6 +281,7 @@ body {
     padding: 8px 24px;
     box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
 }
+
 #restart-btn:hover {
     transform: scale(1.1) perspective(1px);
     transition: 0.3 ease;

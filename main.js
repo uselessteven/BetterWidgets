@@ -1,7 +1,6 @@
 const path = require("path");
 const { app, BrowserWindow, ipcMain } = require("electron");
 const fs = require("fs");
-
 let win;
 
 function createWindow() {
@@ -56,7 +55,6 @@ app.whenReady().then(() => {
 function captureScreenshot() {
   return new Promise((resolve, reject) => {
     win.capturePage().then(image => {
-      //Save screenshot to a file
       const filePath = path.join(app.getPath('downloads'), 'screenshot.png');
       const imageBuffer = image.toPNG();
       fs.writeFileSync(filePath, imageBuffer);

@@ -20,7 +20,9 @@ buttons.forEach((button) => {
 
 chooseVaseBtn.addEventListener("click", () => {
   const activeSlide = document.querySelector("[data-active]");
-  const vaseSelection = [...activeSlide.parentElement.children].indexOf(activeSlide);
+  const vaseSelection = [...activeSlide.parentElement.children].indexOf(
+    activeSlide
+  );
   localStorage.setItem("selectedVase", vaseSelection);
   window.electronAPI.loadPage("src/bouquete/writeMessage.html");
 });

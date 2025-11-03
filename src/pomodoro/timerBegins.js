@@ -20,7 +20,7 @@ function startCountdown(durationMins) {
       duration--;
     } else {
       clearInterval(interval);
-      window.electronAPI.loadPage("stopWork.html");
+      window.electronAPI.loadPage("src/pomodoro/stopWork.html");
     }
   }
 
@@ -29,5 +29,5 @@ function startCountdown(durationMins) {
 }
 
 window.onload = function () {
-  startCountdown(25);
+  startCountdown(0.1);
 };

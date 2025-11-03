@@ -8,16 +8,18 @@ console.log("Final Progress:", finalConclusion);
 console.log("Type of finalProgress:", typeof finalConclusion);
 
 if (isNaN(finalConclusion)) {
-    console.log("Invalid final progress value");
+  console.log("Invalid final progress value");
 } else if (finalConclusion === 100) {
-    success.removeAttribute("hidden"); 
-    title.innerHTML = "You're doing good!";
-    conclusion.innerText = `Your final progress: ${Math.round(finalConclusion)}%`;
+  success.removeAttribute("hidden");
+  title.innerHTML = "El huesoooooo!";
+  conclusion.innerText = `Tu progreso fue del ${Math.round(finalConclusion)}%`;
 } else {
-    unsuccess.removeAttribute("hidden"); 
-    title.innerHTML = "Keep going!";
-    conclusion.innerText = `Your final progress: ${Math.round(finalConclusion)}%`;
+  unsuccess.removeAttribute("hidden");
+  title.innerHTML = "Manito tu tas bien?";
+  conclusion.innerText = `Solo hiciste un ${Math.round(finalConclusion)}%`;
 }
 
 const restartBtn = document.getElementById("restart-btn");
-restartBtn.addEventListener("click", () => { window.electronAPI.loadPage("src/index.html"); });
+restartBtn.addEventListener("click", () => {
+  window.electronAPI.loadPage("src/index.html");
+});

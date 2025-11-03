@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <title>Pomo Chrono !</title>
   </head>
   <body>
     <div class="stopWorkDiv">
@@ -13,10 +12,11 @@
         autoplay
         style="display: none"
       ></audio>
-      <h1>BREAK TIME !</h1>
+      <h1>Hora del descanso!</h1>
       <p id="task"></p>
       <p id="time-remaining">00:00</p>
-      <button id="start-break-btn">START BREAK</button>
+      <button id="start-break-btn">Iniciar descanso</button>
+      <button id="restart-btn">Inicio</button>
     </div>
 
     <script>
@@ -33,6 +33,8 @@
         .addEventListener("click", () => {
           window.electronAPI.loadPage("src/pomodoro/startBreak.html");
         });
+      const restartBtn = document.getElementById("restart-btn");
+      restartBtn.addEventListener("click", () => {window.electronAPI.loadPage("src/index.html");})
     </script>
   </body>
 </html>

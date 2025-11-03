@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -52,7 +54,71 @@ body {
   height: 100px;
 }
 
-#fixed-div img{
+#fixed-div img {
   width: 142px;
   height: 80px;
+}
+
+.menu-container {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 0;
+  z-index: 900;
+}
+
+.menu-btn {
+  position: relative;
+  width: 220px;
+  height: 160px;
+  background-image: url('../assets/marcos-widgets.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #000;
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  image-rendering: pixelated;
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.menu-btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  pointer-events: none;
+}
+
+#todo-btn {
+  background-image: url('../assets/marcos-widgets.png');
+}
+
+#feelings-btn {
+  background-image: url('../assets/marcos-widgets.png');
+}
+
+#pomodoro-btn {
+  background-image: url('../assets/marcos-widgets.png');
+}
+
+#bouquet-btn {
+  background-image: url('../assets/marcos-widgets.png');
 }

@@ -30,14 +30,17 @@ chooseFlowersBtn.addEventListener("click", () => {
     i += 1;
     flowersCount.innerHTML = i.toString() + "/4";
     flowerCombinations.push(flowerId);
-    console.log("Selected flowers:", flowerCombinations);
+    console.log("Flores seleccionadas:", flowerCombinations);
 
     if (flowerCombinations.length === 4) {
-      localStorage.setItem("selectedFlowers", JSON.stringify(flowerCombinations));
-      chooseFlowersBtn.innerHTML = "Go to the next step!";
+      localStorage.setItem(
+        "selectedFlowers",
+        JSON.stringify(flowerCombinations)
+      );
+      chooseFlowersBtn.innerHTML = "Siguente paso";
     }
   } else {
-    console.log("You have already selected 4 flowers: ", flowerCombinations);
+    console.log("Seleccionaste 4 flores: ", flowerCombinations);
     chooseFlowersBtn.addEventListener("click", () => {
       window.electronAPI.loadPage("src/bouquete/chooseVase.html");
     });
