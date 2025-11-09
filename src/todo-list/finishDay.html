@@ -8,27 +8,16 @@
   <body>
     <div class="finalDiv">
       <h1 id="final-title"></h1>
-
       <div class="center-image">
-        <img
-          src="../../assets/FinishGood.png"
-          alt="Center image"
-          id="successTasks"
-          hidden
-        />
-        <img
-          src="../../assets/FinishMid.png"
-          alt="Center image"
-          id="unsuccessTasks"
-          hidden
-        />
+        <img src="../../assets/FinishGood.png" alt="Center image" id="successTasks" hidden />
+        <img src="../../assets/FinishMid.png" alt="Center image" id="unsuccessTasks" hidden />
       </div>
       <span id="conclusion"></span>
-      <button id="restart-btn">Inicio</button>
+      <button class="menu-btn" id="home-btn"></button>
     </div>
     <script src="finishDay.js">
-      const restartBtn = document.getElementById("restart-btn");
-      restartBtn.addEventListener("click", () => {window.electronAPI.loadPage("index.html");})
+      const homeBtn = document.getElementById("home-btn");
+      homeBtn.addEventListener("click", () => {window.electronAPI.loadPage("index.html");})
     </script>
   </body>
 </html>

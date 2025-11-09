@@ -36,6 +36,32 @@ function createWindow() {
   });
   win.on("maximize", () => win.webContents.send("window-maximized"));
   win.on("unmaximize", () => win.webContents.send("window-restored"));
+
+win.webContents.on("did-finish-load", () => {
+  const cursorPath = path.join(__dirname, "assets", "cursor.png").replace(/\\/g, "/");
+  const loadingCursorPath = path.join(__dirname, "assets", "cursor-loading.png").replace(/\\/g, "/");
+
+  win.webContents.insertCSS(`
+    html, body, * {
+      cursor: url("file://${cursorPath}") 0 0, auto !important;
+    }
+
+    a, button, [role="button"], .clickable, *:hover {
+      cursor: url("file://${cursorPath}") 0 0, pointer !important;
+    }
+
+    body.waiting, body.loading, *[data-loading="true"], .loading {
+      cursor: url("file://${loadingCursorPath}") 0 0, wait !important;
+    }
+
+    img {
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: auto;
+    }
+  `);
+});
+
 }
 
 app.whenReady().then(() => {

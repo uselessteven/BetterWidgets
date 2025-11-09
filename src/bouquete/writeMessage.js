@@ -1,4 +1,4 @@
-const finishBtn = document.querySelector(".final-step");
+const finishBtn = document.querySelector("#final-step");
 const loverName = document.getElementById("name");
 const loverMsg = document.getElementById("message");
 

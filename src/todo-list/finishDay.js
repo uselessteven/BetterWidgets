@@ -19,7 +19,7 @@ if (isNaN(finalConclusion)) {
   conclusion.innerText = `Solo hiciste un ${Math.round(finalConclusion)}%`;
 }
 
-const restartBtn = document.getElementById("restart-btn");
-restartBtn.addEventListener("click", () => {
+const homeBtn = document.getElementById("home-btn");
+homeBtn.addEventListener("click", () => {
   window.electronAPI.loadPage("src/index.html");
 });

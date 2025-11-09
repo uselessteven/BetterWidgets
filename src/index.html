@@ -4,30 +4,47 @@
     <meta charset="UTF-8" />
     <title>BetterWidgets</title>
     <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
     <div id="titlebar">
-      <img id="min-btn" src="../assets/minimizar.png" alt="Minimizar" />
-      <img id="max-btn" src="../assets/maximizar.png" alt="Maximizar" />
-      <img id="close-btn" src="../assets/cerrar.png" alt="Cerrar" />
-    </div>
-
-    <div id="fixed-div">
-      <img src="../assets/interfaz-clima.png" alt="Imagen fija" />
-      <div class="datetime">
-        <span id="day"></span>
-        <span id="number"></span>
-        <span id="month"></span>
+      <div class="descriptionBar">
+        <img id="logo-btn" src="../assets/icon.png" alt="Logo" />
+      </div>
+      <div class="window-controls">
+        <button id="min-btn">
+          <img src="../assets/minimizar.png" alt="Minimizar">
+        </button>
+        <button id="max-btn">
+          <img src="../assets/maximizar.png" alt="Maximizar">
+        </button>
+        <button id="close-btn">
+          <img src="../assets/cerrar.png" alt="Cerrar">
+        </button>
       </div>
     </div>
-
-    <div class="menu-container">
-      <button class="menu-btn" id="todo-btn"><span>TO-DO LIST</span></button>
-      <button class="menu-btn" id="feelings-btn"><span>FEELINGS</span></button>
-      <button class="menu-btn" id="pomodoro-btn"><span>POMODORO</span></button>
-      <button class="menu-btn" id="bouquet-btn"><span>BOUQUET</span></button>
+  </head>
+  <body>
+    <div class="div-container">
+      <span></span>
+      <div class="top-container">
+        <span></span>
+        <div class="calendar">
+        </div>
+        <div class="weather">
+          <span></span>
+          <div class="widget">
+            <img src="../assets/interfaz-clima.png">
+          </div>
+          <div class="junimo">
+            <img src="../assets/junimo-stardrop.gif"/>
+          </div>
+        </div>
+      </div>
+      <div class="menu-container">
+        <button class="menu-btn" id="todo-btn"><span></span></button>
+        <button class="menu-btn" id="feelings-btn"><span></span></button>
+        <button class="menu-btn" id="pomodoro-btn"><span></span></button>
+        <button class="menu-btn" id="bouquet-btn"><span></span></button>
+      </div>
     </div>
-
     <script>
       window.addEventListener("DOMContentLoaded", () => {
         const minBtn = document.getElementById("min-btn");

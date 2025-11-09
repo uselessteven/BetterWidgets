@@ -42,23 +42,6 @@ body {
     height: 343px;
 }
 
-#start-btn {
-    font-family: "VT323", monospace;
-    font-size: 24px;
-    color: #FEF6F0;
-    background-color: #97A085;
-    border: 4px solid #151E08;
-    border-radius: 10px;
-    padding: 8px 24px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-}
-
-#start-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
 /*------ DASHBOARD ------*/
 .dashDiv {
     display: flex;
@@ -211,22 +194,6 @@ body {
     cursor: pointer;
 }
 
-#finish-btn {
-    font-family: "VT323", monospace;
-    font-size: 24px;
-    color: #FEF6F0;
-    background-color: #97A085;
-    border: 4px solid #151E08;
-    border-radius: 10px;
-    padding: 8px 24px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-}
-
-#finish-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
 
 /*------ CONCLUSION ------*/
 .finalDiv {
@@ -271,23 +238,6 @@ body {
     margin-bottom: 16px;
 }
 
-#restart-btn {
-    font-family: "VT323", monospace;
-    font-size: 24px;
-    color: #FEF6F0;
-    background-color: #97A085;
-    border: 4px solid #151E08;
-    border-radius: 10px;
-    padding: 8px 24px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-}
-
-#restart-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
 .done {
     text-decoration: line-through;
     color: #97A085;
@@ -300,4 +250,65 @@ body {
 
 .show {
     display: block !important;
+}
+
+/*------ BOTONES ------*/
+.menu-container {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 0;
+  z-index: 900;
+}
+
+.menu-btn {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-image: url('../assets/marcos-widgets.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #000;
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  image-rendering: pixelated;
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.menu-btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  pointer-events: none;
+}
+
+#finish-btn {
+    background-image: url('../../assets/next-r.png');
+}
+
+#restart-btn {
+    background-image: url('../../assets/back-l.png');
+}
+
+#home-btn {
+    background-image: url('../../assets/back.png');
 }

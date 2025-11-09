@@ -145,23 +145,6 @@
     right: -80px;
 }
 
-.flowersDiv .next-step {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.flowersDiv .next-step:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
 /*------ CHOOSE YOUR VASE ------*/
 
 .vaseDiv {
@@ -241,23 +224,6 @@
 
 .carousel-button.next {
     right: -80px;
-}
-
-.vaseDiv .next-step {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.vaseDiv .next-step:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
 }
 
 /*------ WRITE YOUR MESSAGE ------*/
@@ -352,36 +318,34 @@
     height: 200px;
     left: 50%;
     transform: translateX(-51%);
-    z-index: 5;
+    z-index: 0;
 }
 
 .flower-layer {
     position: absolute;
     width: 80%;
     left: 10%;
-    top: 20px;
+    top: 0px;
     z-index: 1;
     transform-origin: bottom center;
 }
 
 #flower1 {
     transform: rotate(-30deg);
+    top: -80px;
     z-index: 1;
 }
 
 #flower2 {
-    transform: rotate(-5deg);
-    z-index: 2;
-}
-
-#flower3 {
-    transform: rotate(5deg);
+    transform: rotate(0deg);
+    top: -80px;
     z-index: 3;
 }
 
-#flower4 {
+#flower3 {
     transform: rotate(30deg);
-    z-index: 4;
+    top: -80px;
+    z-index: 2;
 }
 
 .bouquetDiv p {
@@ -394,41 +358,76 @@
     margin-bottom: 32px;
 }
 
-.bouquetDiv #screenshot-btn {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.bouquetDiv #screenshot-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
-.bouquetDiv #restart-btn {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.bouquetDiv #restart-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
 .hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+
+/*------ BOTONES ------*/
+.menu-container {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 0;
+  z-index: 900;
+}
+
+.menu-btn {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-image: url('../assets/marcos-widgets.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #000;
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  image-rendering: pixelated;
+}
+.menu-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.menu-btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  pointer-events: none;
+}
+
+#create-bouquet {
+    background-image: url('../../assets/next.png');
+}
+
+#next-step{
+    background-image: url('../../assets/next-r.png');
+}
+
+#final-step{
+    background-image: url('../../assets/next-r.png');
+}
+
+#screenshot-btn{
+    background-image: url('../../assets/next.png');
+}
+
+#restart-btn{
+    background-image: url('../../assets/back.png');
 }

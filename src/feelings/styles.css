@@ -61,8 +61,8 @@ body {
     background-color: #283593;
 }
 
-.text.mobile.bg-FF7704:before {
-    background-color: #FF7704;
+.text.mobile.bg-ec4848ff:before {
+    background-color: #e94848ff;
 }
 
 @keyframes animate {
@@ -81,40 +81,6 @@ body {
     margin: 48px;
     display: flex;
     flex-direction: column;
-}
-
-#start-btn {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 24px;
-    background-color: #fff;
-    color: #222;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-}
-
-#start-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
-#restart-btn {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 24px;
-    background-color: #fff;
-    color: #222;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-}
-
-#restart-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
 }
 
 /*------ WRITING PAGE ------*/
@@ -208,15 +174,15 @@ body {
 }
 
 .hover-bg6 {
-    background-color: #E88015;
+    background-color: #d12323ff;
 }
 
 .hover-bg7 {
-    background-color: #7897D4;
+    background-color: #A4B4D4;
 }
 
 .hover-bg8 {
-    background-color: #A4B4D4;
+    background-color: #7897D4;
 }
 
 .hover-btn-bg1 {
@@ -240,15 +206,15 @@ body {
 }
 
 .hover-btn-bg6 {
-    background-color: #aa5907;
+    background-color: #e94848ff;
 }
 
 .hover-btn-bg7 {
-    background-color: #3a5ca1;
+    background-color: #506794;
 }
 
 .hover-btn-bg8 {
-    background-color: #506794;
+    background-color: #3a5ca1;
 }
 
 .bottomDiv {
@@ -286,42 +252,72 @@ body {
     resize: none;
 }
 
-#save-btn {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 12px 24px;
-    background-color: #fff;
-    color: #222;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-}
-
-#save-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
-#exit-btn {
-    font-size: 16px;
-    font-weight: 600;
-    font-family: "VT323", monospace;
-    padding: 12px 24px;
-    background-color: #fff;
-    color: #222;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-}
-
-#exit-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
 .hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+/*------ BOTONES ------*/
+.menu-container {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 0;
+  z-index: 900;
+}
+
+.menu-btn {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-image: url('../assets/marcos-widgets.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #000;
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  image-rendering: pixelated;
+}
+
+.menu-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.menu-btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  pointer-events: none;
+}
+
+#save-btn {
+    background-image: url('../../assets/next-r.png');
+}
+
+#exit-btn {
+    background-image: url('../../assets/back.png');
+}
+
+#restart-btn {
+    background-image: url('../../assets/back-l.png');
+}
+
+#start-btn {
+    background-image: url('../../assets/next-r.png');
 }

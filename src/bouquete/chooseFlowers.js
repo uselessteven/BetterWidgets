@@ -1,9 +1,9 @@
 const buttons = document.querySelectorAll("[data-carousel-button]");
 const flowersCount = document.getElementById("flowersLeft");
-const chooseFlowersBtn = document.querySelector(".next-step");
+const chooseFlowersBtn = document.querySelector("#next-step");
 let flowerCombinations = [];
 let i = 0;
-flowersCount.innerHTML = i.toString() + "/4";
+flowersCount.innerHTML = i.toString() + "/3";
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -26,21 +26,21 @@ chooseFlowersBtn.addEventListener("click", () => {
   const activeSlide = document.querySelector("[data-active]");
   const flowerId = [...activeSlide.parentElement.children].indexOf(activeSlide);
 
-  if (flowerCombinations.length < 4) {
+  if (flowerCombinations.length < 3) {
     i += 1;
-    flowersCount.innerHTML = i.toString() + "/4";
+    flowersCount.innerHTML = i.toString() + "/3";
     flowerCombinations.push(flowerId);
     console.log("Flores seleccionadas:", flowerCombinations);
 
-    if (flowerCombinations.length === 4) {
+    if (flowerCombinations.length === 3) {
       localStorage.setItem(
         "selectedFlowers",
         JSON.stringify(flowerCombinations)
       );
-      chooseFlowersBtn.innerHTML = "Siguente paso";
+      chooseFlowersBtn.style.backgroundImage = "url('../../assets/next.png')";
     }
   } else {
-    console.log("Seleccionaste 4 flores: ", flowerCombinations);
+    console.log("Seleccionaste 3 flores: ", flowerCombinations);
     chooseFlowersBtn.addEventListener("click", () => {
       window.electronAPI.loadPage("src/bouquete/chooseVase.html");
     });

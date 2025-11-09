@@ -1,5 +1,5 @@
 const buttons = document.querySelectorAll("[data-carousel-button]");
-const chooseVaseBtn = document.querySelector(".next-step");
+const chooseVaseBtn = document.querySelector("#next-step");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
