@@ -1,7 +1,12 @@
+require("dotenv").config();
 const path = require("path");
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, globalShortcut } = require("electron");
 const fs = require("fs");
+const { createClient } = require("@supabase/supabase-js");
 let win;
+let supabaseClient = null;
+const hasSupabaseConfig =
+  Boolean(process.env.SUPABASE_URL) && Boolean(process.env.SUPABASE_ANON_KEY);
 
 function createWindow() {
   win = new BrowserWindow({
@@ -17,7 +22,7 @@ function createWindow() {
   });
 
   win.removeMenu();
-  win.loadFile("src/index.html");  
+  win.loadFile("src/auth/login.html");
   //win.webContents.openDevTools();
   ipcMain.on("minimize-window", () => win.minimize());
   ipcMain.on("maximize-window", () => {
@@ -50,6 +55,15 @@ app.whenReady().then(() => {
     fs.writeFileSync(screenshotPath, image.toPNG());
     return screenshotPath;
   });
+
+  globalShortcut.register("Control+Shift+I", () => {
+    if (!win) return;
+    if (win.webContents.isDevToolsOpened()) {
+      win.webContents.closeDevTools();
+    } else {
+      win.webContents.openDevTools({ mode: "detach" });
+    }
+  });
 });
 
 function captureScreenshot() {
@@ -68,4 +82,95 @@ function captureScreenshot() {
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
+});
+
+app.on("will-quit", () => {
+  globalShortcut.unregisterAll();
+});
+
+function getSupabaseClient() {
+  if (!hasSupabaseConfig) {
+    throw new Error("SUPABASE_ENV_NOT_CONFIGURED");
+  }
+  if (!supabaseClient) {
+    console.info("[auth] Inicializando cliente de Supabase");
+    supabaseClient = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY, {
+      auth: {
+        autoRefreshToken: true,
+        persistSession: true,
+        detectSessionInUrl: false,
+      },
+    });
+  }
+  return supabaseClient;
+}
+
+function serializeSupabaseResponse(payload) {
+  return JSON.parse(
+    JSON.stringify({
+      data: payload?.data ?? null,
+      error: payload?.error
+        ? {
+            message: payload.error.message,
+            status: payload.error.status ?? null,
+            name: payload.error.name ?? payload.error.code ?? "SupabaseError",
+          }
+        : null,
+    })
+  );
+}
+
+ipcMain.handle("supabase:is-configured", () => hasSupabaseConfig);
+
+ipcMain.handle("supabase:sign-in", async (_event, credentials) => {
+  try {
+    const client = getSupabaseClient();
+    const result = await client.auth.signInWithPassword(credentials);
+    console.info("[auth] signInWithPassword", {
+      email: credentials?.email,
+      success: !result.error,
+    });
+    return serializeSupabaseResponse(result);
+  } catch (error) {
+    console.error("[auth] signInWithPassword error", error);
+    return serializeSupabaseResponse({ data: null, error });
+  }
+});
+
+ipcMain.handle("supabase:sign-up", async (_event, credentials) => {
+  try {
+    const client = getSupabaseClient();
+    const result = await client.auth.signUp(credentials);
+    console.info("[auth] signUp", {
+      email: credentials?.email,
+      success: !result.error,
+    });
+    return serializeSupabaseResponse(result);
+  } catch (error) {
+    console.error("[auth] signUp error", error);
+    return serializeSupabaseResponse({ data: null, error });
+  }
+});
+
+ipcMain.handle("supabase:get-session", async () => {
+  try {
+    const client = getSupabaseClient();
+    const result = await client.auth.getSession();
+    return serializeSupabaseResponse(result);
+  } catch (error) {
+    console.warn("[auth] getSession error", error);
+    return serializeSupabaseResponse({ data: { session: null }, error });
+  }
+});
+
+ipcMain.handle("supabase:sign-out", async () => {
+  try {
+    const client = getSupabaseClient();
+    const result = await client.auth.signOut();
+    console.info("[auth] signOut", { success: !result.error });
+    return serializeSupabaseResponse(result);
+  } catch (error) {
+    console.error("[auth] signOut error", error);
+    return serializeSupabaseResponse({ data: null, error });
+  }
 });

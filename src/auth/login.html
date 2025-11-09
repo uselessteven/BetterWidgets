@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://*.supabase.co"
+    />
+    <title>BetterWidgets · Acceso</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-card">
+        <header class="login-card__header">
+          <div class="login-card__badge">BetterWidgets</div>
+          <h1 class="login-card__title">Inicia sesión</h1>
+          <p class="login-card__subtitle">
+            Usa tus credenciales para acceder a tus widgets.
+          </p>
+        </header>
+        <form id="login-form" class="login-form">
+          <label class="login-form__label">
+            Correo electrónico
+            <input
+              id="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="tu@email.com"
+              class="login-form__input"
+            />
+          </label>
+          <label class="login-form__label">
+            Contraseña
+            <input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="••••••••"
+              class="login-form__input"
+            />
+          </label>
+          <div class="login-form__actions">
+            <button id="submit-btn" type="submit" class="login-form__button">
+              Entrar
+            </button>
+            <button id="toggle-mode" type="button" class="login-form__secondary">
+              Crear cuenta
+            </button>
+          </div>
+          <p id="status-message" class="login-form__status" role="status"></p>
+        </form>
+        <footer class="login-card__footer">
+          <p>
+            Las cuentas nuevas recibirán un correo de confirmación. Revisa tu bandeja y vuelve aquí para iniciar sesión.
+          </p>
+        </footer>
+      </section>
+    </main>
+    <script src="login.js"></script>
+  </body>
+</html>
+
