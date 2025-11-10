@@ -13,9 +13,6 @@
 			<button id="min-btn">
 				<img src="../../assets/minimizar.png" alt="Minimizar">
 			</button>
-			<button id="max-btn">
-				<img src="../../assets/maximizar.png" alt="Maximizar">
-			</button>
 			<button id="close-btn">
 				<img src="../../assets/cerrar.png" alt="Cerrar">
 			</button>
@@ -23,36 +20,44 @@
 	</div>
 </head>
 <body>
-	<div class="vaseDiv">
-		<h1>Selecciona tu jarron</h1>
-		<div class="carousel" data-carousel>
-			<button class="carousel-button prev" data-carousel-button="prev">
-				<img src="../../assets/arrow-left.png" alt="Previous button" />
-			</button>
-
-			<button class="carousel-button next" data-carousel-button="next">
-				<img src="../../assets/arrow-right.png" alt="Next button" />
-			</button>
-
-			<ul data-slides>
-				<li class="slide" data-active id="pink">
-					<img src="../../assets/pink-vase.gif" alt="Vase 1" />
-				</li>
-
-				<li class="slide" id="green">
-					<img src="../../assets/green-vase.gif" alt="Vase 2" />
-				</li>
-
-				<li class="slide" id="blue">
-					<img src="../../assets/blue-vase.gif" alt="Vase 3" />
-				</li>
-			</ul>
+	<div class="dashDiv">
+		<div class="top-section">
+			<div class="mainDiv">
+				<h1>Selecciona tu jarron</h1>
+				<div class="carousel" data-carousel>
+					<button class="carousel-button prev" data-carousel-button="prev">
+						<img src="../../assets/arrow-left.png" alt="Previous button" />
+					</button>
+					<ul data-slides>
+						<li class="slide" data-active id="pink">
+							<img src="../../assets/pink-vase.gif" alt="Vase 1" />
+						</li>
+						<li class="slide" id="green">
+							<img src="../../assets/green-vase.gif" alt="Vase 2" />
+						</li>
+						<li class="slide" id="blue">
+							<img src="../../assets/blue-vase.gif" alt="Vase 3" />
+						</li>
+					</ul>
+					<button class="carousel-button next" data-carousel-button="next">
+						<img src="../../assets/arrow-right.png" alt="Next button" />
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="menu-container">
+			<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+			<button class="menu-btn" id="next-step"><img src="../../assets/next-r.png"/></button>
 		</div>
 	</div>
-	<div class="menu-container">
-		<button class="menu-btn" id="next-step"></button>
-	</div>
+
 	<script src="chooseVase.js" defer></script>
 	<script src="../render.js"></script>
+	<script>
+		document.getElementById("restart-btn").addEventListener("click", () => {
+			window.electronAPI.loadPage("src/index.html");
+		});
+	</script>
+	
 </body>
 </html>

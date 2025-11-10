@@ -21,8 +21,7 @@ function createWindow() {
 	});
 
 	win.removeMenu();
-	//win.loadFile("src/bouquete/chooseFlowers.html");
-	 win.loadFile("src/index.html");
+	win.loadFile("src/index.html");
 	// win.webContents.openDevTools();
 	ipcMain.on("minimize-window", () => win.minimize());
 	ipcMain.on("maximize-window", () => {

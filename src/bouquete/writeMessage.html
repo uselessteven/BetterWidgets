@@ -13,9 +13,6 @@
 			<button id="min-btn">
 				<img src="../../assets/minimizar.png" alt="Minimizar">
 			</button>
-			<button id="max-btn">
-				<img src="../../assets/maximizar.png" alt="Maximizar">
-			</button>
 			<button id="close-btn">
 				<img src="../../assets/cerrar.png" alt="Cerrar">
 			</button>
@@ -23,17 +20,29 @@
 	</div>
 </head>
 <body>
-	<div class="msgDiv">
-		<h1>Escribe un mensje</h1>
-		<label for="name">Coloca su nombre:</label>
-		<input type="text" id="name" size="20" />
-		<label for="message">Tu mensaje:</label>
-		<input type="text" id="message" size="20" />
+	<div class="dashDiv">
+		<div class="top-section">
+			<div class="mainDiv">
+				<div class="msgDiv">
+					<h1>Escribe un mensje</h1>
+					<label for="name">Coloca su nombre:</label>
+					<input type="text" id="name" size="20" />
+					<label for="message">Tu mensaje:</label>
+					<input type="text" id="message" size="20" />
+				</div>
+			</div>
+		</div>
 		<div class="menu-container">
-			<button class="menu-btn" id="final-step"></button>
+			<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+			<button class="menu-btn" id="final-step"><img src="../../assets/next.png"/></button>
 		</div>
 	</div>
 	<script src="writeMessage.js" defer></script>
 	<script src="../render.js"></script>
+	<script>
+		document.getElementById("restart-btn").addEventListener("click", () => {
+			window.electronAPI.loadPage("src/index.html");
+		});
+	</script>
 </body>
 </html>

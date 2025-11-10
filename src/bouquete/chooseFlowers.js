@@ -37,7 +37,9 @@ chooseFlowersBtn.addEventListener("click", () => {
 				"selectedFlowers",
 				JSON.stringify(flowerCombinations)
 			);
-			chooseFlowersBtn.style.backgroundImage = "url('../../assets/next.png')";
+			const nextStepBtn = document.getElementById("next-step");
+			const img = nextStepBtn.querySelector("img");
+			img.src = "../../assets/next.png";
 		}
 	} else {
 		console.log("Seleccionaste 3 flores: ", flowerCombinations);
