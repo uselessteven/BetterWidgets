@@ -4,6 +4,23 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="max-btn">
+				<img src="../../assets/maximizar.png" alt="Maximizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
 </head>
 <body>
 	<div class="setTaskDiv">
@@ -16,6 +33,7 @@
 		<input type="text" placeholder="Write your task here..." id="task-value" size="25" />
 		<button id="set-timer-btn">Ajustar tiempo</button>
 	</div>
+	<script src="../render.js"></script>
 	<script>
 		document.getElementById("set-timer-btn").addEventListener("click", () => {
 			const task = document.getElementById("task-value").value;

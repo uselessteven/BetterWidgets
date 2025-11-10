@@ -4,7 +4,23 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="./styles.css" />
-	<script src="chooseVase.js" defer></script>
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="max-btn">
+				<img src="../../assets/maximizar.png" alt="Maximizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
 </head>
 <body>
 	<div class="vaseDiv">
@@ -36,5 +52,7 @@
 	<div class="menu-container">
 		<button class="menu-btn" id="next-step"></button>
 	</div>
+	<script src="chooseVase.js" defer></script>
+	<script src="../render.js"></script>
 </body>
 </html>
