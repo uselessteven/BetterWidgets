@@ -1,88 +1,51 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>BetterWidgets</title>
-    <link rel="stylesheet" href="index.css" />
-    <div id="titlebar">
-      <div class="descriptionBar">
-        <img id="logo-btn" src="../assets/icon.png" alt="Logo" />
-      </div>
-      <div class="window-controls">
-        <button id="min-btn">
-          <img src="../assets/minimizar.png" alt="Minimizar">
-        </button>
-        <button id="max-btn">
-          <img src="../assets/maximizar.png" alt="Maximizar">
-        </button>
-        <button id="close-btn">
-          <img src="../assets/cerrar.png" alt="Cerrar">
-        </button>
-      </div>
-    </div>
-  </head>
-  <body>
-    <div class="div-container">
-      <span></span>
-      <div class="top-container">
-        <span></span>
-        <div class="calendar">
-        </div>
-        <div class="weather">
-          <span></span>
-          <div class="widget">
-            <img src="../assets/interfaz-clima.png">
-          </div>
-          <div class="junimo">
-            <img src="../assets/junimo-stardrop.gif"/>
-          </div>
-        </div>
-      </div>
-      <div class="menu-container">
-        <button class="menu-btn" id="todo-btn"><span></span></button>
-        <button class="menu-btn" id="feelings-btn"><span></span></button>
-        <button class="menu-btn" id="pomodoro-btn"><span></span></button>
-        <button class="menu-btn" id="bouquet-btn"><span></span></button>
-      </div>
-    </div>
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        const minBtn = document.getElementById("min-btn");
-        const maxBtn = document.getElementById("max-btn");
-        const todoBtn = document.getElementById("todo-btn");
-        const closeBtn = document.getElementById("close-btn");
-        const bouquetBtn = document.getElementById("bouquet-btn");
-        const feelingsBtn = document.getElementById("feelings-btn");
-        const pomodotoBtn = document.getElementById("pomodoro-btn");
-
-        todoBtn.addEventListener("click", () => {
-          window.electronAPI.loadPage("src/todo-list/todo.html");
-        });
-        bouquetBtn.addEventListener("click", () => {
-          window.electronAPI.loadPage("src/bouquete/bouquete.html");
-        });
-        feelingsBtn.addEventListener("click", () => {
-          window.electronAPI.loadPage("src/feelings/feelings.html");
-        });
-        pomodotoBtn.addEventListener("click", () => {
-          window.electronAPI.loadPage("src/pomodoro/pomodoro.html");
-        });
-
-        if (minBtn)
-          minBtn.addEventListener("click", () => window.electronAPI.minimize());
-        if (maxBtn)
-          maxBtn.addEventListener("click", () => window.electronAPI.maximize());
-        if (closeBtn)
-          closeBtn.addEventListener("click", () => window.electronAPI.close());
-
-        window.electronAPI.onMaximize(() => {
-          maxBtn.src = "../assets/mini-maxi.png";
-        });
-
-        window.electronAPI.onRestore(() => {
-          maxBtn.src = "../assets/maximizar.png";
-        });
-      });
-    </script>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<title>BetterWidgets</title>
+	<link rel="stylesheet" href="index.css" />
+	<script src="render.js"></script>
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="max-btn">
+				<img src="../assets/maximizar.png" alt="Maximizar">
+			</button>
+			<button id="close-btn">
+				<img src="../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
+	<div class="div-container">
+		<span></span>
+		<div class="top-container">
+			<span></span>
+			<div class="calendar">
+				<img src="../assets/calendario.png"/>
+			</div>
+			<div class="weather">
+				<span></span>
+				<div class="widget">
+					<img src="../assets/interfaz-clima.png">
+				</div>
+				<div class="junimo">
+					<img src="../assets/junimo-stardrop.gif"/>
+				</div>
+			</div>
+		</div>
+		<div class="menu-container">
+			<button class="menu-btn" id="todo-btn"><span></span></button>
+			<button class="menu-btn" id="feelings-btn"><span></span></button>
+			<button class="menu-btn" id="pomodoro-btn"><span></span></button>
+			<button class="menu-btn" id="bouquet-btn"><span></span></button>
+		</div>
+	</div>
+</body>
 </html>

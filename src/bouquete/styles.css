@@ -1,433 +1,440 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /*------ HOME PAGE ------*/
 .mainDiv {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(239, 170, 176);
+	background-size: cover;
+	background-blend-mode: overlay;
+	justify-content: center;
+	align-items: center;
 }
 
 .mainDiv img {
-    width: 256px;
-    height: 256px;
+	width: 256px;
+	height: 256px;
 }
 
 .mainDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 40px;
-    font-weight: 400;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 40px;
+	font-weight: 400;
 }
 
 .mainDiv hr {
-    width: 400px;
-    margin-bottom: 16px;
-    border: 2px solid #fff;
-    border-radius: 25px;
+	width: 400px;
+	margin-bottom: 16px;
+	border: 2px solid #fff;
+	border-radius: 25px;
 }
 
 .mainDiv p {
-    width: 400px;
-    margin-bottom: 40px;
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
+	width: 400px;
+	margin-bottom: 40px;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
 }
 
 .mainDiv button {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
+	font-family: "VT323", monospace;
+	color: #fff;
+	padding: 16px;
+	background-color: #E86975;
+	outline: none;
+	border: 2px solid #fff;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px #222;
 }
 
 .mainDiv button:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
+	transform: scale(1.1) perspective(1px);
+	transition: 0.3s ease;
+	cursor: pointer;
 }
 
 /*------ CHOOSE YOUR FLOWERS ------*/
-
 .flowersDiv {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(239, 170, 176);
+	background-size: cover;
+	background-blend-mode: overlay;
+	justify-content: center;
+	align-items: center;
 }
 
 .flowersDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 48px;
-    text-align: center;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 400;
+	margin-bottom: 48px;
+	text-align: center;
 }
 
 .flowersDiv .carousel {
-    width: 256px;
-    height: 256px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
+	width: 256px;
+	height: 256px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 40px;
 }
 
 .slide {
-    width: 256px;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    list-style: none;
-    opacity: 0;
+	width: 256px;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	list-style: none;
+	opacity: 0;
 }
 
-.slide>img {
-    display: block;
-    width: 256px;
-    height: 256px;
+.slide > img {
+	display: block;
+	width: 256px;
+	height: 256px;
+	image-rendering: pixelated; /* ✨ pixel art nítido */
 }
 
 .slide[data-active] {
-    opacity: 1;
+	opacity: 1;
 }
 
 .carousel-button {
-    width: 64px;
-    height: 64px;
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 0 .5rem;
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	z-index: 2;
+	background: none;
+	border: none;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	padding: 0 .5rem;
 }
 
 .carousel-button img {
-    width: 64px;
-    height: 64px;
+	width: 64px;
+	height: 64px;
+	image-rendering: pixelated; /* GIFs o sprites pixel art */
 }
 
 .carousel-button.prev {
-    left: -80px;
+	left: -80px;
 }
 
 .carousel-button.next {
-    right: -80px;
+	right: -80px;
 }
 
 /*------ CHOOSE YOUR VASE ------*/
-
 .vaseDiv {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(239, 170, 176);
+	background-size: cover;
+	background-blend-mode: overlay;
+	justify-content: center;
+	align-items: center;
 }
 
 .vaseDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 48px;
-    text-align: center;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 400;
+	margin-bottom: 48px;
+	text-align: center;
 }
 
 .vaseDiv .carousel {
-    width: 256px;
-    height: 256px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
+	width: 256px;
+	height: 256px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 40px;
 }
 
 .slide {
-    width: 256px;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    list-style: none;
-    opacity: 0;
+	width: 256px;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	list-style: none;
+	opacity: 0;
 }
 
-.slide>img {
-    display: block;
-    width: 256px;
-    height: 256px;
+.slide > img {
+	display: block;
+	width: 256px;
+	height: 256px;
+	image-rendering: pixelated;
 }
 
 .slide[data-active] {
-    opacity: 1;
+	opacity: 1;
 }
 
 .carousel-button {
-    width: 64px;
-    height: 64px;
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 0 .5rem;
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	z-index: 2;
+	background: none;
+	border: none;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	padding: 0 .5rem;
 }
 
 .carousel-button img {
-    width: 64px;
-    height: 64px;
+	width: 64px;
+	height: 64px;
+	image-rendering: pixelated;
 }
 
 .carousel-button.prev {
-    left: -80px;
+	left: -80px;
 }
 
 .carousel-button.next {
-    right: -80px;
+	right: -80px;
 }
 
 /*------ WRITE YOUR MESSAGE ------*/
-
 .msgDiv {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(239, 170, 176);
+	background-size: cover;
+	background-blend-mode: overlay;
+	justify-content: center;
+	align-items: center;
 }
 
 .msgDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 48px;
-    text-align: center;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 400;
+	margin-bottom: 48px;
+	text-align: center;
 }
 
 .msgDiv label {
-    margin-bottom: 8px;
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 14px;
+	margin-bottom: 8px;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 14px;
 }
 
 .msgDiv input {
-    border: none;
-    border-radius: 25px;
-    height: 24px;
-    margin-bottom: 40px;
-    padding: 16px;
+	border: none;
+	border-radius: 25px;
+	height: 24px;
+	margin-bottom: 40px;
+	padding: 16px;
 }
 
 .msgDiv .final-step {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
+	font-family: "VT323", monospace;
+	color: #fff;
+	padding: 16px;
+	background-color: #E86975;
+	outline: none;
+	border: 2px solid #fff;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px #222;
 }
 
 .msgDiv .final-step:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
+	transform: scale(1.1) perspective(1px);
+	transition: 0.3s ease;
+	cursor: pointer;
 }
 
 /*------ RENDERING BOUQUET ------*/
-
 .bouquetDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: rgb(239, 170, 176);
+	background-size: cover;
+	background-blend-mode: overlay;
+	text-align: center;
 }
 
 .bouquetDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 8px;
-    text-align: center;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 400;
+	margin-bottom: 8px;
+	text-align: center;
 }
 
 .bouquet {
-    position: relative;
-    width: 200px;
-    height: 300px;
+	position: relative;
+	width: 200px;
+	height: 300px;
 }
 
 .vase-layer {
-    position: absolute;
-    bottom: 0;
-    width: 200px;
-    height: 200px;
-    left: 50%;
-    transform: translateX(-51%);
-    z-index: 0;
+	position: absolute;
+	bottom: 0;
+	width: 200px;
+	height: 200px;
+	left: 50%;
+	transform: translateX(-51%);
+	z-index: 0;
 }
 
 .flower-layer {
-    position: absolute;
-    width: 80%;
-    left: 10%;
-    top: 0px;
-    z-index: 1;
-    transform-origin: bottom center;
+	position: absolute;
+	width: auto; /* tamaño real de la imagen */
+	height: auto;
+	left: 50%;
+	transform-origin: bottom center;
+	transform-box: fill-box;
+	image-rendering: pixelated;
+}
+
+.flower-layer img {
+	width: 64px;  /* ajusta al tamaño original de tus flores */
+	height: 64px;
+	image-rendering: pixelated;
 }
 
 #flower1 {
-    transform: rotate(-30deg);
-    top: -80px;
-    z-index: 1;
+	transform: rotate(-30deg);
+	top: -80px;
+	z-index: 1;
 }
 
 #flower2 {
-    transform: rotate(0deg);
-    top: -80px;
-    z-index: 3;
+	transform: rotate(0deg);
+	top: -80px;
+	z-index: 3;
 }
 
 #flower3 {
-    transform: rotate(30deg);
-    top: -80px;
-    z-index: 2;
+	transform: rotate(30deg);
+	top: -80px;
+	z-index: 2;
 }
 
 .bouquetDiv p {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 16px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    margin-bottom: 32px;
+	font-family: "VT323", monospace;
+	color: #fff;
+	font-size: 16px;
+	width: 80%;
+	max-width: 600px;
+	text-align: center;
+	margin-bottom: 32px;
 }
 
 .hidden {
-    opacity: 0;
-    pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
 }
-
 
 /*------ BOTONES ------*/
 .menu-container {
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  padding: 0;
-  z-index: 900;
+	position: fixed;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 25px;
+	padding: 0;
+	z-index: 900;
 }
 
 .menu-btn {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background-image: url('../assets/marcos-widgets.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  overflow: hidden;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
-  color: #000;
-  text-shadow: 2px 2px 4px #000;
-  letter-spacing: 1px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  image-rendering: pixelated;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	background-image: url('../assets/marcos-widgets.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	overflow: hidden;
+	font-family: 'Press Start 2P', monospace;
+	font-size: 10px;
+	color: #000;
+	text-shadow: 2px 2px 4px #000;
+	letter-spacing: 1px;
+	transition: transform 0.2s ease, filter 0.2s ease;
+	image-rendering: pixelated;
 }
+
 .menu-btn:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
+	transform: scale(1.05);
+	filter: brightness(1.2);
 }
 
 .menu-btn span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  pointer-events: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+	pointer-events: none;
 }
 
 #create-bouquet {
-    background-image: url('../../assets/next.png');
+	background-image: url('../../assets/next.png');
 }
 
-#next-step{
-    background-image: url('../../assets/next-r.png');
+#next-step {
+	background-image: url('../../assets/next-r.png');
 }
 
-#final-step{
-    background-image: url('../../assets/next-r.png');
+#final-step {
+	background-image: url('../../assets/next-r.png');
 }
 
-#screenshot-btn{
-    background-image: url('../../assets/next.png');
+#screenshot-btn {
+	background-image: url('../../assets/next.png');
 }
 
-#restart-btn{
-    background-image: url('../../assets/back.png');
+#restart-btn {
+	background-image: url('../../assets/back.png');
 }

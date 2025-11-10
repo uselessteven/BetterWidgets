@@ -1,323 +1,323 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "VT323", monospace;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "VT323", monospace;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
 
 .mainDiv {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .titleDiv {
-    width: 600px;
-    overflow: hidden;
-    text-align: center;
+	width: 600px;
+	overflow: hidden;
+	text-align: center;
 }
 
 .titleDiv .text {
-    position: relative;
-    color: #4070F4;
-    font-size: 40px;
-    font-weight: 600;
+	position: relative;
+	color: #4070F4;
+	font-size: 40px;
+	font-weight: 600;
 }
 
 .titleDiv .text.immobile {
-    color: #FFF;
+	color: #FFF;
 }
 
 .text.mobile:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #010718;
-    border-left: 2px solid #fff;
-    animation: animate 4s steps(12) infinite;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #010718;
+	border-left: 2px solid #fff;
+	animation: animate 4s steps(12) infinite;
 }
 
 .text.mobile.bg-ACC794:before {
-    background-color: #ACC794;
+	background-color: #ACC794;
 }
 
 .text.mobile.bg-283593:before {
-    background-color: #283593;
+	background-color: #283593;
 }
 
 .text.mobile.bg-ec4848ff:before {
-    background-color: #e94848ff;
+	background-color: #e94848ff;
 }
 
 @keyframes animate {
 
-    40%,
-    60% {
-        left: calc(100% + 4px);
-    }
+	40%,
+	60% {
+		left: calc(100% + 4px);
+	}
 
-    100% {
-        left: 0%;
-    }
+	100% {
+		left: 0%;
+	}
 }
 
 .btnDiv {
-    margin: 48px;
-    display: flex;
-    flex-direction: column;
+	margin: 48px;
+	display: flex;
+	flex-direction: column;
 }
 
 /*------ WRITING PAGE ------*/
 .dashboardDiv {
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ACC794;
-    color: #fff;
-    transition: background-color 0.4s ease-in-out;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #ACC794;
+	color: #fff;
+	transition: background-color 0.4s ease-in-out;
 }
 
 .emotionDiv {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 24px;
+	width: 100%;
+	height: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 24px;
 }
 
 .emotionDiv h2 {
-    font-size: 32px;
-    margin-bottom: 16px;
+	font-size: 32px;
+	margin-bottom: 16px;
 }
 
 .emoBtn {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
 }
 
 .btn {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    min-width: 72px;
-    max-height: 72px;
-    padding: 8px 0;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    background-color: #739159;
-    color: #fff;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	min-width: 72px;
+	max-height: 72px;
+	padding: 8px 0;
+	font-weight: 600;
+	border: none;
+	border-radius: 10px;
+	background-color: #739159;
+	color: #fff;
+	transition: background-color 0.3s ease-in-out, transform 0.3s ease;
 }
 
 .btn img {
-    width: 32px;
-    height: 32px;
+	width: 32px;
+	height: 32px;
 }
 
 .btn:hover {
-    transform: scale(1.05) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
+	transform: scale(1.05) perspective(1px);
+	transition: 0.3 ease;
+	cursor: pointer;
 }
 
 .selected-btn {
-    background-color: white !important;
-    color: black !important;
-    border: 2px solid white;
-    transform: scale(1.1);
+	background-color: white !important;
+	color: black !important;
+	border: 2px solid white;
+	transform: scale(1.1);
 }
 
 .hover-bg1 {
-    background-color: #ACC794;
+	background-color: #ACC794;
 }
 
 .hover-bg2 {
-    background-color: #FFB3C8;
+	background-color: #FFB3C8;
 }
 
 .hover-bg3 {
-    background-color: #75E4FF;
+	background-color: #75E4FF;
 }
 
 .hover-bg4 {
-    background-color: #FFCE3F;
+	background-color: #FFCE3F;
 }
 
 .hover-bg5 {
-    background-color: #83da79;
+	background-color: #83da79;
 }
 
 .hover-bg6 {
-    background-color: #d12323ff;
+	background-color: #d12323ff;
 }
 
 .hover-bg7 {
-    background-color: #A4B4D4;
+	background-color: #A4B4D4;
 }
 
 .hover-bg8 {
-    background-color: #7897D4;
+	background-color: #7897D4;
 }
 
 .hover-btn-bg1 {
-    background-color: #739159;
+	background-color: #739159;
 }
 
 .hover-btn-bg2 {
-    background-color: #d16282;
+	background-color: #d16282;
 }
 
 .hover-btn-bg3 {
-    background-color: #41a7c0;
+	background-color: #41a7c0;
 }
 
 .hover-btn-bg4 {
-    background-color: #cf9f0f;
+	background-color: #cf9f0f;
 }
 
 .hover-btn-bg5 {
-    background-color: #59b84e;
+	background-color: #59b84e;
 }
 
 .hover-btn-bg6 {
-    background-color: #e94848ff;
+	background-color: #e94848ff;
 }
 
 .hover-btn-bg7 {
-    background-color: #506794;
+	background-color: #506794;
 }
 
 .hover-btn-bg8 {
-    background-color: #3a5ca1;
+	background-color: #3a5ca1;
 }
 
 .bottomDiv {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-    margin-bottom: 24px;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 8px;
+	margin-bottom: 24px;
 }
 
 .explainFeels h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
+	font-size: 24px;
+	margin-bottom: 16px;
 }
 
 .wishTmr h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
+	font-size: 24px;
+	margin-bottom: 16px;
 }
 
 .bottomDiv textarea {
-    padding: 4px;
-    border: none;
-    border-radius: 10px;
-    font-family: "VT323", monospace;
-    font-size: 14px;
-    width: 100%;
-    height: calc(1.5em * 4);
-    line-height: 1.5em;
-    overflow: hidden;
-    resize: none;
+	padding: 4px;
+	border: none;
+	border-radius: 10px;
+	font-family: "VT323", monospace;
+	font-size: 14px;
+	width: 100%;
+	height: calc(1.5em * 4);
+	line-height: 1.5em;
+	overflow: hidden;
+	resize: none;
 }
 
 .hidden {
-    opacity: 0;
-    pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
 }
 
 /*------ BOTONES ------*/
 .menu-container {
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  padding: 0;
-  z-index: 900;
+	position: fixed;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 25px;
+	padding: 0;
+	z-index: 900;
 }
 
 .menu-btn {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background-image: url('../assets/marcos-widgets.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  overflow: hidden;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
-  color: #000;
-  text-shadow: 2px 2px 4px #000;
-  letter-spacing: 1px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  image-rendering: pixelated;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	background-image: url('../assets/marcos-widgets.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	overflow: hidden;
+	font-family: 'Press Start 2P', monospace;
+	font-size: 10px;
+	color: #000;
+	text-shadow: 2px 2px 4px #000;
+	letter-spacing: 1px;
+	transition: transform 0.2s ease, filter 0.2s ease;
+	image-rendering: pixelated;
 }
 
 .menu-btn:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
+	transform: scale(1.05);
+	filter: brightness(1.2);
 }
 
 .menu-btn span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  pointer-events: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+	pointer-events: none;
 }
 
 #save-btn {
-    background-image: url('../../assets/next-r.png');
+	background-image: url('../../assets/next-r.png');
 }
 
 #exit-btn {
-    background-image: url('../../assets/back.png');
+	background-image: url('../../assets/back.png');
 }
 
 #restart-btn {
-    background-image: url('../../assets/back-l.png');
+	background-image: url('../../assets/back-l.png');
 }
 
 #start-btn {
-    background-image: url('../../assets/next-r.png');
+	background-image: url('../../assets/next-r.png');
 }

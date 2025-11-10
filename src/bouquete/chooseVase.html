@@ -1,42 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="chooseVase.js" defer></script>
-  </head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./styles.css" />
+	<script src="chooseVase.js" defer></script>
+</head>
+<body>
+	<div class="vaseDiv">
+		<h1>Selecciona tu jarron</h1>
+		<div class="carousel" data-carousel>
+			<button class="carousel-button prev" data-carousel-button="prev">
+				<img src="../../assets/arrow-left.png" alt="Previous button" />
+			</button>
 
-  <body>
-    <div class="vaseDiv">
-      <h1>Selecciona tu jarron</h1>
+			<button class="carousel-button next" data-carousel-button="next">
+				<img src="../../assets/arrow-right.png" alt="Next button" />
+			</button>
 
-      <div class="carousel" data-carousel>
-        <button class="carousel-button prev" data-carousel-button="prev">
-          <img src="../../assets/arrow-left.png" alt="Previous button" />
-        </button>
+			<ul data-slides>
+				<li class="slide" data-active id="pink">
+					<img src="../../assets/pink-vase.gif" alt="Vase 1" />
+				</li>
 
-        <button class="carousel-button next" data-carousel-button="next">
-          <img src="../../assets/arrow-right.png" alt="Next button" />
-        </button>
+				<li class="slide" id="green">
+					<img src="../../assets/green-vase.gif" alt="Vase 2" />
+				</li>
 
-        <ul data-slides>
-          <li class="slide" data-active id="pink">
-            <img src="../../assets/pink-vase.gif" alt="Vase 1" />
-          </li>
-
-          <li class="slide" id="green">
-            <img src="../../assets/green-vase.gif" alt="Vase 2" />
-          </li>
-
-          <li class="slide" id="blue">
-            <img src="../../assets/blue-vase.gif" alt="Vase 3" />
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="menu-container">
-      <button class="menu-btn" id="next-step"></button>
-    </div>
-  </body>
+				<li class="slide" id="blue">
+					<img src="../../assets/blue-vase.gif" alt="Vase 3" />
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="menu-container">
+		<button class="menu-btn" id="next-step"></button>
+	</div>
+</body>
 </html>

@@ -1,314 +1,315 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    background-color: #6E763F;
+	background-color: #6E763F;
 }
 
 /*------ HOME PAGE ------*/
 .mainDiv {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
 }
 
 .mainDiv h1 {
-    font-family: "VT323", monospace;
-    font-weight: 400;
-    font-size: 48px;
-    color: #FEF6F0;
+	font-family: "VT323", monospace;
+	font-weight: 400;
+	font-size: 48px;
+	color: #FEF6F0;
 }
 
 .mainDiv .center-image {
-    width: 372px;
-    height: 357px;
-    border: 4px solid #151E08;
-    border-radius: 25px;
-    background-color: #97A085;
-    margin-bottom: 24px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+	width: 372px;
+	height: 357px;
+	border: 4px solid #151E08;
+	border-radius: 25px;
+	background-color: #97A085;
+	margin-bottom: 24px;
+	box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
 }
 
 .mainDiv .center-image img {
-    margin-top: 10px;
-    width: 343px;
-    height: 343px;
+	margin-top: 10px;
+	width: 343px;
+	height: 343px;
 }
 
 /*------ DASHBOARD ------*/
 .dashDiv {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding: 32px;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding: 32px;
 }
 
 .top-section {
-    width: 100%;
-    height: 30%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
+	width: 100%;
+	height: 30%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 16px;
 }
 
 .datetime {
-    width: 30%;
-    height: 100%;
-    background-color: #FEF6F0;
-    border: 4px solid #CAC7B1;
-    border-radius: 25px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+	width: 30%;
+	height: 100%;
+	background-color: #FEF6F0;
+	border: 4px solid #CAC7B1;
+	border-radius: 25px;
+	box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 #day {
-    font-family: "VT323", monospace;
-    font-size: 20px;
-    font-weight: 600;
+	font-family: "VT323", monospace;
+	font-size: 20px;
+	font-weight: 600;
 }
 
 #number {
-    font-family: "VT323", monospace;
-    font-size: 32px;
-    color: #FEF6F0;
-    background-color: #6E763F;
-    padding: 8px 12px;
-    border-radius: 50px;
+	font-family: "VT323", monospace;
+	font-size: 32px;
+	color: #FEF6F0;
+	background-color: #6E763F;
+	padding: 8px 12px;
+	border-radius: 50px;
 }
 
 #month {
-    font-family: "VT323", monospace;
-    font-size: 16px;
+	font-family: "VT323", monospace;
+	font-size: 16px;
 }
 
 .right-section {
-    width: 66%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+	width: 66%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .progression {
-    height: 60%;
-    background-color: #FEF6F0;
-    border: 4px solid #CAC7B1;
-    border-radius: 25px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+	height: 60%;
+	background-color: #FEF6F0;
+	border: 4px solid #CAC7B1;
+	border-radius: 25px;
+	box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .progression h3 {
-    font-family: "VT323", monospace;
-    font-size: 20px;
-    margin-bottom: 8px;
-    font-weight: 600;
+	font-family: "VT323", monospace;
+	font-size: 20px;
+	margin-bottom: 8px;
+	font-weight: 600;
 }
 
 #progress-bar {
-    appearance: none;
-    height: 16px;
-    width: 70%;
-    border-radius: 10px;
+	appearance: none;
+	height: 16px;
+	width: 70%;
+	border-radius: 10px;
 }
 
 #progress-bar::-webkit-progress-bar {
-    background-color: #CAC7B1;
-    border-radius: 10px;
+	background-color: #CAC7B1;
+	border-radius: 10px;
 }
 
 #progress-bar::-webkit-progress-value {
-    background-color: #6E763F;
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out;
+	background-color: #6E763F;
+	border-radius: 10px;
+	transition: width 0.5s ease-in-out;
 }
 
 .add-task {
-    display: flex;
-    flex-direction: row;
-    margin-top: 16px;
-    justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	margin-top: 16px;
+	justify-content: space-between;
 }
 
 .add-task input {
-    outline: none;
-    border: none;
-    padding: 14px;
-    border-radius: 50px;
+	outline: none;
+	border: none;
+	padding: 14px;
+	border-radius: 50px;
 }
 
 .add-task button {
-    font-size: 24px;
-    color: #FEF6F0;
-    background-color: #151E08;
-    padding: 10px 16px;
-    outline: none;
-    border: none;
-    border-radius: 16px;
+	font-size: 24px;
+	color: #FEF6F0;
+	background-color: #151E08;
+	padding: 10px 16px;
+	outline: none;
+	border: none;
+	border-radius: 16px;
 }
 
 #add-btn {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .bottom-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 50%;
-    background-color: #FEF6F0;
-    border: 4px solid #CAC7B1;
-    border-radius: 25px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
-    margin-bottom: 24px;
-    padding: 16px;
-    gap: 14px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 50%;
+	background-color: #FEF6F0;
+	border: 4px solid #CAC7B1;
+	border-radius: 25px;
+	box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+	margin-bottom: 24px;
+	padding: 16px;
+	gap: 14px;
 }
 
 .bottom-section .bx {
-    color: #151E08;
-    margin-right: 16px;
+	color: #151E08;
+	margin-right: 16px;
 }
 
 .bottom-section p span {
-    font-family: "VT323", monospace;
-    color: #151E08;
-    cursor: pointer;
+	font-family: "VT323", monospace;
+	color: #151E08;
+	cursor: pointer;
 }
 
 
 /*------ CONCLUSION ------*/
 .finalDiv {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    padding: 32px;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding: 32px;
 }
 
 #final-title {
-    font-family: "VT323", monospace;
-    font-weight: 400;
-    font-size: 48px;
-    color: #FEF6F0;
+	font-family: "VT323", monospace;
+	font-weight: 400;
+	font-size: 48px;
+	color: #FEF6F0;
 }
 
 .finalDiv .center-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 372px;
-    height: 357px;
-    border: 4px solid #151E08;
-    border-radius: 25px;
-    background-color: #97A085;
-    margin-bottom: 24px;
-    box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 372px;
+	height: 357px;
+	border: 4px solid #151E08;
+	border-radius: 25px;
+	background-color: #97A085;
+	margin-bottom: 24px;
+	box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
 }
 
 .finalDiv .center-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
 }
 
 #conclusion {
-    font-family: "VT323", monospace;
-    font-size: 24px;
-    margin-bottom: 16px;
+	font-family: "VT323", monospace;
+	font-size: 24px;
+	margin-bottom: 16px;
 }
 
 .done {
-    text-decoration: line-through;
-    color: #97A085;
-    transition: 0.2s ease-in-out;
+	text-decoration: line-through;
+	color: #97A085;
+	transition: 0.2s ease-in-out;
 }
 
 .hidden {
-    display: none !important;
+	display: none !important;
 }
 
 .show {
-    display: block !important;
+	display: block !important;
 }
 
 /*------ BOTONES ------*/
 .menu-container {
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  padding: 0;
-  z-index: 900;
+	position: fixed;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 25px;
+	padding: 0;
+	z-index: 900;
 }
 
 .menu-btn {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background-image: url('../assets/marcos-widgets.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  overflow: hidden;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
-  color: #000;
-  text-shadow: 2px 2px 4px #000;
-  letter-spacing: 1px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  image-rendering: pixelated;
+	position: relative;
+	width: 150px;
+	height: 150px;
+	background-image: url('../assets/marcos-widgets.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	overflow: hidden;
+	font-family: 'Press Start 2P', monospace;
+	font-size: 10px;
+	color: #000;
+	text-shadow: 2px 2px 4px #000;
+	letter-spacing: 1px;
+	transition: transform 0.2s ease, filter 0.2s ease;
+	image-rendering: pixelated;
 }
 
 .menu-btn:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
+	transform: scale(1.05);
+	filter: brightness(1.2);
 }
 
 .menu-btn span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  pointer-events: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+	pointer-events: none;
 }
 
 #finish-btn {
-    background-image: url('../../assets/next-r.png');
+	background-image: url('../../assets/next-r.png');
 }
 
 #restart-btn {
-    background-image: url('../../assets/back-l.png');
+	background-image: url('../../assets/back-l.png');
 }
 
 #home-btn {
-    background-image: url('../../assets/back.png');
+	background-image: url('../../assets/back.png');
 }

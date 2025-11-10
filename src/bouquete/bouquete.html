@@ -1,33 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-
-  <body>
-    <div class="mainDiv">
-      <img src="../../assets/bouquet.gif" alt="Bouquet de fleurs" />
-      <h1>Mi ramo de San Valentin</h1>
-      <hr />
-      <p>
-        &#9829; Crea tu propio ramo de San Valentin &#9829;
-      </p>
-    </div>
-    <div class="menu-container">
-      <button class="menu-btn" id="create-bouquet"></button>
-    </div>
-
-    <script>
-      document
-        .getElementById("create-bouquet")
-        .addEventListener("click", () => {
-          window.electronAPI.loadPage("src/bouquete/chooseFlowers.html");
-        });
-      document.getElementById("restart-btn").addEventListener("click", () => {
-        window.electronAPI.loadPage("src/index.html");
-      });
-    </script>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+	<div class="mainDiv">
+		<img src="../../assets/bouquet.gif" alt="Bouquet de fleurs" />
+		<h1>Mi ramo de San Valentin</h1>
+		<hr />
+		<p>
+			&#9829; Crea tu propio ramo de San Valentin &#9829;
+		</p>
+	</div>
+	<div class="menu-container">
+		<button class="menu-btn" id="create-bouquet"></button>
+	</div>
+	<script>
+		document
+			.getElementById("create-bouquet")
+			.addEventListener("click", () => {
+				window.electronAPI.loadPage("src/bouquete/chooseFlowers.html");
+			});
+		document.getElementById("restart-btn").addEventListener("click", () => {
+			window.electronAPI.loadPage("src/index.html");
+		});
+	</script>
+</body>
 </html>
