@@ -95,5 +95,5 @@ saveBtn.addEventListener("click", async () => {
 
 const restartBtn = document.getElementById("exit-btn");
 restartBtn.addEventListener("click", () => {
-	window.electronAPI.loadPage("src/index.html");
+	window.electronAPI.loadPage("src/feelings/feelings.html");
 });

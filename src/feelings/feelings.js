@@ -29,9 +29,10 @@ const textChange = () => {
 		text.textContent = words[index];
 		text.style.color = textColors[index];
 		changeRectangleColor(rectColors[index]);
-		document.body.style.backgroundColor = bgColors[index];
+		document.querySelector(".mainDiv").style.backgroundColor = bgColors[index];
 		index = (index + 1) % words.length;
 	};
+	
 
 	updateText();
 	setInterval(updateText, 4000);

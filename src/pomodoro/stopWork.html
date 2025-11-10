@@ -13,9 +13,6 @@
 			<button id="min-btn">
 				<img src="../../assets/minimizar.png" alt="Minimizar">
 			</button>
-			<button id="max-btn">
-				<img src="../../assets/maximizar.png" alt="Maximizar">
-			</button>
 			<button id="close-btn">
 				<img src="../../assets/cerrar.png" alt="Cerrar">
 			</button>
@@ -23,13 +20,22 @@
 	</div>
 </head>
 <body>
-	<div class="stopWorkDiv">
+	<div class="dashDiv">
 		<audio src="../../assets/clock_alarm.wav" autoplay style="display: none"></audio>
-		<h1>Hora del descanso!</h1>
-		<p id="task"></p>
-		<p id="time-remaining">00:00</p>
-		<button id="start-break-btn">Iniciar descanso</button>
-		<button id="restart-btn">Inicio</button>
+		<div class="pomodoro">
+			<div class="top-section">
+				<div class="mainDiv">
+					<h1>Hora del descanso!</h1>
+					<p id="task"></p>
+					<p id="time-remaining">00:00</p>
+					<img src="../../assets/pomoMenu.gif" alt="Pomodoro Menu" />
+				</div>
+			</div>
+			<div class="menu-container">
+				<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+				<button class="menu-btn" id="start-break-btn"><img src="../../assets/next-r.png"/></button>
+			</div>
+		</div>
 	</div>
 	<script src="../render.js"></script>
 	<script>

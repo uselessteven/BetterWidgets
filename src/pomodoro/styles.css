@@ -4,36 +4,138 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "VT323", monospace;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	object-fit: contain;
+}
+
+html {
+	padding: 40px 50px 20px 50px;
+	background-image: url('../../assets/background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	image-rendering: pixelated;
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
 }
 
 body {
-	background-color: #d16282;
-	color: white;
-	font-family: "VT323", monospace;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
-/*------ HOME PAGE ------*/
-.mainDiv {
+.dashDiv {
 	display: flex;
-	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	justify-content: center;
 	align-items: center;
-	padding: 32px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 10%;
+	padding-right: 10%;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.dashDiv * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	object-fit: contain;
+	overflow: hidden;
+}
+
+.pomodoro {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	overflow: hidden;
+	gap: 5px;
+	padding: 5px;
+	position: relative;
+}
+
+.pomodoro * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	object-fit: contain;
+}
+
+.top-section {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+	background-image: url('../../assets/todo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	image-rendering: pixelated;
+	background-color: transparent;
+}
+
+.top-section * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	object-fit: contain;
+	overflow: hidden;
+}
+
+.mainDiv {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 50px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
 }
 
 .mainDiv h1 {
 	text-align: center;
-	letter-spacing: 12px;
-	font-size: 56px;
-	margin: 16px;
+    font-family: "VT323", monospace;
+    font-weight: bold;
+    font-size: 30px;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+    text-align: center;
 }
 
 .mainDiv p {
 	text-align: center;
-	font-size: 24px;
-	letter-spacing: 2px;
+    font-family: "VT323", monospace;
+    font-weight: bold;
+    font-size: 24px;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+    text-align: center;
 }
 
 .mainDiv img {
@@ -43,96 +145,86 @@ body {
 	image-rendering: pixelated;
 }
 
-.mainDiv #start-btn {
-	font-family: "VT323", monospace;
-	font-size: 40px;
-	color: white;
-	padding: 8px 40px;
-	background-color: #d16282;
-	border: 4px solid white;
-	border-radius: 10px;
-	box-shadow: 2px 2px 4px #222;
+.title-center {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "VT323", monospace;
+    font-weight: bold;
+    font-size: 24px;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+    text-align: center;
 }
 
-.mainDiv #start-btn:hover {
-	transform: scale(1.1) perspective(1px);
-	transition: 0.3 ease;
-	cursor: pointer;
+.decoration {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.mainDiv #restart-btn {
-	font-family: "VT323", monospace;
-	font-size: 40px;
-	color: white;
-	padding: 8px 40px;
-	background-color: #d16282;
-	border: 4px solid white;
-	border-radius: 10px;
-	box-shadow: 2px 2px 4px #222;
+.decoration p {
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
 }
 
-.mainDiv #restart-btn:hover {
-	transform: scale(1.1) perspective(1px);
-	transition: 0.3 ease;
-	cursor: pointer;
-}
-
-/*------ SET TASK PAGE ------*/
-.setTaskDiv {
-	display: flex;
-	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
-	justify-content: center;
-	align-items: center;
-	padding: 32px;
-}
-
-.setTaskDiv h1 {
-	text-align: center;
-	letter-spacing: 12px;
-	font-size: 56px;
-	margin: 16px;
-}
-
-.setTaskDiv img {
-	width: 40px;
-	height: 40px;
-	margin: 16px;
+#krobus {
+	width: 248px;
+	height: 248px;
 	image-rendering: pixelated;
 }
 
-.setTaskDiv p {
-	text-align: center;
-	font-size: 16px;
-	letter-spacing: 2px;
+.task-values {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 30%;
+	overflow: hidden;
+	background-image: url('../../assets/top-final.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	image-rendering: pixelated;
+	background-color: transparent;
+	padding: 30px;
+	box-sizing: border-box;
 }
 
-.setTaskDiv #task-value {
+.task-values textarea {
+	padding: 4px;
 	border: none;
-	border-radius: 50px;
-	padding: 16px;
-	margin-top: 24px;
-	margin-bottom: 56px;
-}
-
-.setTaskDiv #set-timer-btn {
-	font-family: "VT323", monospace;
-	font-size: 40px;
-	color: white;
-	padding: 8px 40px;
-	background-color: #d16282;
-	border: 4px solid white;
 	border-radius: 10px;
-	box-shadow: 2px 2px 4px #222;
+	font-family: "VT323", monospace;
+	font-weight: bold;
+	color: #56160C;
+	text-shadow: -2px 2px 0 #E09650;
+	font-size: 26px;
+	width: 100%;
+	height: calc(1.5em * 4);
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	resize: none;
+	background-color: transparent;
+	outline: none;
 }
 
-.setTaskDiv #set-timer-btn:hover {
-	transform: scale(1.1) perspective(1px);
-	transition: 0.3 ease;
-	cursor: pointer;
+
+.task-values textarea:focus {
+	box-shadow: transparent;
 }
 
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
 
 /*------ LET'S GO PAGE ------*/
 .timerBeginsDiv {
@@ -336,4 +428,53 @@ body {
 	transform: scale(1.1) perspective(1px);
 	transition: 0.3 ease;
 	cursor: pointer;
+}
+
+.menu-container {
+	position: relative;
+	bottom: auto;
+	width: 100%;
+	max-width: 100%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 8px;
+	z-index: 900;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-color: transparent;
+	image-rendering: pixelated;
+}
+
+.menu-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: auto;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	transition: transform 0.2s ease, filter 0.2s ease;
+	image-rendering: pixelated;
+	flex-shrink: 0;
+}
+
+.menu-btn:hover {
+	transform: scale(1.05);
+	filter: brightness(1.2);
+}
+
+.menu-btn img {
+	height: 100%;
+	width: auto;
+	image-rendering: pixelated;
+	object-fit: contain;
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	pointer-events: none;
 }

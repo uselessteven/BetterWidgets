@@ -9,7 +9,8 @@ function createWindow() {
 		width: 1024,
 		height: 600,
 		resizable: false,
-		maximizable: true,
+		maximizable: false,
+		fullscreenable: false,
 		frame: false,
 		icon: path.join(__dirname, "assets/icon.png"),
 		webPreferences: {
@@ -20,8 +21,8 @@ function createWindow() {
 	});
 
 	win.removeMenu();
-	win.loadFile("src/todo-list/todo.html");
-	// win.loadFile("src/index.html");
+	//win.loadFile("src/bouquete/chooseFlowers.html");
+	 win.loadFile("src/index.html");
 	// win.webContents.openDevTools();
 	ipcMain.on("minimize-window", () => win.minimize());
 	ipcMain.on("maximize-window", () => {

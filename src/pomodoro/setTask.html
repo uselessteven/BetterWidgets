@@ -13,9 +13,6 @@
 			<button id="min-btn">
 				<img src="../../assets/minimizar.png" alt="Minimizar">
 			</button>
-			<button id="max-btn">
-				<img src="../../assets/maximizar.png" alt="Maximizar">
-			</button>
 			<button id="close-btn">
 				<img src="../../assets/cerrar.png" alt="Cerrar">
 			</button>
@@ -23,15 +20,27 @@
 	</div>
 </head>
 <body>
-	<div class="setTaskDiv">
-		<h1>Asigna una tarea</h1>
-		<img src="../../assets/crayonPomo.png" alt="Pomodoro Crayon" />
-		<p>
-			Escribe la tarea que haras <br />
-			en esta sesion.
-		</p>
-		<input type="text" placeholder="Write your task here..." id="task-value" size="25" />
-		<button id="set-timer-btn">Ajustar tiempo</button>
+	<div class="dashDiv">
+		<div class="pomodoro">
+			<div class="top-section">
+				<div class="mainDiv">
+					<div class="title-center">
+						<h1>Asigna una tarea</h1>
+					</div>
+					<div class="decoration">
+						<img src="../../assets/crayonPomo.png" alt="Pomodoro Crayon" id="krobus" />
+						<p> Escribe la tarea que haras <br /> en esta sesion.</p>
+					</div>
+					<div class="task-values">
+						<textarea name="task-value" id="task-value" rows="4" ols="48"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="menu-container">
+				<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+				<button class="menu-btn" id="set-timer-btn"><img src="../../assets/next-r.png"/></button>
+			</div>
+		</div>
 	</div>
 	<script src="../render.js"></script>
 	<script>
@@ -40,6 +49,9 @@
 
 			localStorage.setItem("taskValue", task);
 			window.electronAPI.loadPage("src/pomodoro/timerBegins.html");
+		});
+		document.getElementById("restart-btn").addEventListener("click", () => {
+			window.electronAPI.loadPage("src/pomodoro/pomodoro.html");
 		});
 	</script>
 </body>

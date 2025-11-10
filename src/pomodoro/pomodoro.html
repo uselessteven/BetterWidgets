@@ -13,9 +13,6 @@
 			<button id="min-btn">
 				<img src="../../assets/minimizar.png" alt="Minimizar">
 			</button>
-			<button id="max-btn">
-				<img src="../../assets/maximizar.png" alt="Maximizar">
-			</button>
 			<button id="close-btn">
 				<img src="../../assets/cerrar.png" alt="Cerrar">
 			</button>
@@ -23,12 +20,20 @@
 	</div>
 </head>
 <body>
-	<div class="mainDiv">
-		<h1>CROMODORO</h1>
-		<p>Estudia mas eficiente con este cronometro</p>
-		<img src="../../assets/pomoMenu.png" alt="Pomodoro Menu" />
-		<button id="start-btn">Iniciar</button>
-		<button id="restart-btn">Atras</button>
+	<div class="dashDiv">
+		<div class="pomodoro">
+			<div class="top-section">
+				<div class="mainDiv">
+					<h1>CROMODORO</h1>
+					<p>Estudia mas eficiente con este cronometro</p>
+					<img src="../../assets/pomoMenu.gif" alt="Pomodoro Menu" />
+				</div>
+			</div>
+			<div class="menu-container">
+				<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+				<button class="menu-btn" id="start-btn"><img src="../../assets/next-r.png"/></button>
+			</div>
+		</div>
 	</div>
 	<script src="../render.js"></script>
 	<script>

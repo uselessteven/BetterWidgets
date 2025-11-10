@@ -5,29 +5,127 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "VT323", monospace;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	object-fit: contain;
+}
+
+html {
+	padding: 40px 50px 20px 50px;
+	background-image: url('../../assets/background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	image-rendering: pixelated;
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
 }
 
 body {
-	min-height: 100vh;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.dashDiv {
 	display: flex;
-	align-items: center;
+	width: 100%;
+	height: 100%;
 	justify-content: center;
+	align-items: center;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 10%;
+	padding-right: 10%;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.dashDiv * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	object-fit: contain;
+	overflow: hidden;
+}
+
+.feelings {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	overflow: hidden;
+	gap: 5px;
+	padding: 5px;
+	position: relative;
+}
+
+.feelings * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	object-fit: contain;
+}
+
+.top-section {
+	width: 100%;
+	height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+	background-image: url('../../assets/todo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	image-rendering: pixelated;
+	background-color: transparent;
+}
+
+.top-section * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	object-fit: contain;
 	overflow: hidden;
 }
 
 .mainDiv {
-	width: 100vw;
-	min-height: 100vh;
+	width: 100%;
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+	isolation: isolate;
 }
 
 .titleDiv {
 	width: 600px;
 	overflow: hidden;
-	text-align: center;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; 
 }
 
 .titleDiv .text {
@@ -35,22 +133,33 @@ body {
 	color: #4070F4;
 	font-size: 40px;
 	font-weight: 600;
+	text-align: center;
+	width: 100%;
 }
 
 .titleDiv .text.immobile {
 	color: #FFF;
 }
 
-.text.mobile:before {
+.text.mobile {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	z-index: 1;
+	width: auto;
+}
+
+.text.mobile::before {
 	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 100%;
 	width: 100%;
+	height: 100%;
 	background-color: #010718;
 	border-left: 2px solid #fff;
 	animation: animate 4s steps(12) infinite;
+	z-index: 2;
 }
 
 .text.mobile.bg-ACC794:before {
@@ -66,45 +175,39 @@ body {
 }
 
 @keyframes animate {
-
-	40%,
-	60% {
+	40%, 60% {
 		left: calc(100% + 4px);
 	}
-
 	100% {
 		left: 0%;
 	}
 }
 
-.btnDiv {
-	margin: 48px;
-	display: flex;
-	flex-direction: column;
-}
-
-/*------ WRITING PAGE ------*/
 .dashboardDiv {
-	width: 100vw;
-	min-height: 100vh;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	background-color: #ACC794;
+	gap: 5px;
 	color: #fff;
 	transition: background-color 0.4s ease-in-out;
+	box-sizing: border-box;
+	position: relative;
+	overflow: hidden;
+	padding: 10px;
 }
 
 .emotionDiv {
 	width: 100%;
-	height: 30%;
+	height: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	margin-bottom: 24px;
 }
 
 .emotionDiv h2 {
@@ -112,10 +215,53 @@ body {
 	margin-bottom: 16px;
 }
 
+.center-top {
+	width: 100%;
+	height: 50%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background-image: url('../../assets/top-final.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	image-rendering: pixelated;
+	box-sizing: border-box;
+}
+
+.center-top h2 {
+	margin: 0;
+	font-family: "VT323", monospace;
+	font-weight: bold;
+	font-size: 20px;
+	color: #56160C;
+	text-align: center;
+	text-shadow: -2px 2px 0 #E09650;
+	overflow: hidden;
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+}
+
 .emoBtn {
 	display: flex;
 	flex-direction: row;
-	gap: 8px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	gap: 20px;
+	padding: 25px;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-image: url('../../assets/emociones.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 90%;
+	image-rendering: pixelated;
+	background-color: transparent;
 }
 
 .btn {
@@ -124,14 +270,14 @@ body {
 	text-align: center;
 	align-items: center;
 	justify-content: center;
-	min-width: 72px;
-	max-height: 72px;
+	min-width: 52px;
+	max-height: 52px;
 	padding: 8px 0;
 	font-weight: 600;
 	border: none;
-	border-radius: 10px;
 	background-color: #739159;
 	color: #fff;
+	border-radius: 10px;
 	transition: background-color 0.3s ease-in-out, transform 0.3s ease;
 }
 
@@ -217,26 +363,52 @@ body {
 	background-color: #3a5ca1;
 }
 
+.center-top-final {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	image-rendering: pixelated;
+	box-sizing: border-box;
+	color: #56160C;
+	font-family: "VT323", monospace;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	text-shadow: -2px 2px 0 #E09650;
+}
+
 .bottomDiv {
 	width: 100%;
-	height: 50%;
+	height: 80%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	gap: 8px;
-	margin-bottom: 24px;
 }
 
-.explainFeels h2 {
-	font-size: 24px;
-	margin-bottom: 16px;
-}
-
-.wishTmr h2 {
-	font-size: 24px;
-	margin-bottom: 16px;
+.explainFeels, .wishTmr {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-image: url('../../assets/todo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	image-rendering: pixelated;
+	background-color: transparent;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
 .bottomDiv textarea {
@@ -244,12 +416,21 @@ body {
 	border: none;
 	border-radius: 10px;
 	font-family: "VT323", monospace;
+	font-weight: bold;
+	color: #56160C;
+	text-shadow: -2px 2px 0 #E09650;
 	font-size: 14px;
 	width: 100%;
 	height: calc(1.5em * 4);
 	line-height: 1.5em;
 	overflow: hidden;
 	resize: none;
+	background-color: transparent;
+	outline: none;
+}
+
+.bottomDiv textarea:focus {
+	box-shadow: transparent;
 }
 
 .hidden {
@@ -257,40 +438,37 @@ body {
 	pointer-events: none;
 }
 
-/*------ BOTONES ------*/
 .menu-container {
-	position: fixed;
-	bottom: 10px;
-	left: 0;
+	position: relative;
+	bottom: auto;
 	width: 100%;
+	max-width: 100%;
+	height: 10%;
 	display: flex;
 	justify-content: center;
-	flex-wrap: wrap;
-	gap: 25px;
-	padding: 0;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 8px;
 	z-index: 900;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-color: transparent;
+	image-rendering: pixelated;
 }
 
 .menu-btn {
-	position: relative;
-	width: 150px;
-	height: 150px;
-	background-image: url('../assets/marcos-widgets.png');
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: auto;
+	background: transparent;
 	border: none;
-	border-radius: 8px;
 	cursor: pointer;
 	overflow: hidden;
-	font-family: 'Press Start 2P', monospace;
-	font-size: 10px;
-	color: #000;
-	text-shadow: 2px 2px 4px #000;
-	letter-spacing: 1px;
 	transition: transform 0.2s ease, filter 0.2s ease;
 	image-rendering: pixelated;
+	flex-shrink: 0;
 }
 
 .menu-btn:hover {
@@ -298,26 +476,13 @@ body {
 	filter: brightness(1.2);
 }
 
-.menu-btn span {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -40%);
+.menu-btn img {
+	height: 100%;
+	width: auto;
+	image-rendering: pixelated;
+	object-fit: contain;
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
 	pointer-events: none;
-}
-
-#save-btn {
-	background-image: url('../../assets/next-r.png');
-}
-
-#exit-btn {
-	background-image: url('../../assets/back.png');
-}
-
-#restart-btn {
-	background-image: url('../../assets/back-l.png');
-}
-
-#start-btn {
-	background-image: url('../../assets/next-r.png');
 }
