@@ -17,7 +17,7 @@ function createWindow() {
 		maximizable: false,
 		fullscreenable: false,
 		frame: false,
-		icon: path.join(__dirname, "assets/icon.png"),
+		icon: path.join(__dirname, "assets/icon.ico"),
 		webPreferences: {
 			nodeIntegration: false,
 			contextIsolation: true,
@@ -28,7 +28,6 @@ function createWindow() {
 	win.removeMenu();
 	win.loadFile("src/index.html");
 	// win.webContents.openDevTools();
-
 	ipcMain.on("minimize-window", () => win.minimize());
 	ipcMain.on("close-window", () => win.close());
 	ipcMain.on("load-page", (event, page) => win.loadFile(page));
@@ -71,8 +70,6 @@ app.whenReady().then(() => {
 	app.on("activate", () => {
 		if (BrowserWindow.getAllWindows().length === 0) createWindow();
 	});
-
-	// 🖼️ Captura de pantalla
 	ipcMain.handle("take-screenshot", async () => {
 		const image = await win.webContents.capturePage();
 		const screenshotPath = path.join(app.getPath("desktop"), `screenshot-${Date.now()}.png`);
@@ -80,7 +77,6 @@ app.whenReady().then(() => {
 		return screenshotPath;
 	});
 
-	// 🔐 Login con Google
 	ipcMain.handle("google-login", async () => {
 		try {
 			const client = await getAuthenticatedClient();
@@ -91,7 +87,6 @@ app.whenReady().then(() => {
 		}
 	});
 
-	// 🚪 Logout de Google (ahora también notifica al render)
 	ipcMain.handle("google-logout", async () => {
 		try {
 			logoutGoogle();
@@ -101,12 +96,11 @@ app.whenReady().then(() => {
 			}
 			return { success: true };
 		} catch (err) {
-			console.error("❌ Error al cerrar sesión:", err);
+			console.error("Error al cerrar sesión:", err);
 			return { success: false, error: err.message };
 		}
 	});
 
-	// 📅 Obtener eventos del calendario
 	ipcMain.handle("get-calendar-events", async () => {
 		try {
 			const { getCalendarEvents } = require(path.join(__dirname, "src/auth/googleAuth.js"));
