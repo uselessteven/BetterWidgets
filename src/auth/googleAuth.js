@@ -1,4 +1,3 @@
-// src/auth/googleAuth.js
 const { google } = require('googleapis');
 const { BrowserWindow } = require('electron');
 const ElectronStore = require('electron-store');
@@ -18,9 +17,6 @@ const SCOPES = [
 
 let oAuth2Client;
 
-/**
- * Inicializa o reutiliza el cliente OAuth2.
- */
 function getOAuthClient() {
   if (!oAuth2Client) {
     oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
@@ -28,9 +24,6 @@ function getOAuthClient() {
   return oAuth2Client;
 }
 
-/**
- * Carga credenciales guardadas en electron-store.
- */
 function loadSavedCredentials() {
   const token = store.get('google_token');
   if (token) {
@@ -40,9 +33,6 @@ function loadSavedCredentials() {
   return false;
 }
 
-/**
- * Abre la ventana de login con Google y guarda los tokens.
- */
 async function loginWithGoogle() {
   return new Promise((resolve, reject) => {
     const oAuth2Client = getOAuthClient();
@@ -54,8 +44,8 @@ async function loginWithGoogle() {
     });
 
     let authWindow = new BrowserWindow({
-      width: 400,
-      height: 600,
+      width: 800,
+      height: 800,
       resizable: false,
       autoHideMenuBar: true,
       title: "Iniciar sesión con Google",
@@ -67,13 +57,13 @@ async function loginWithGoogle() {
 
     authWindow.loadURL(authUrl);
 
-    let handled = false; // evita múltiples ejecuciones del callback
+    let handled = false;
 
     const handleCallback = async (targetUrl) => {
-      if (handled) return; // Evita doble llamada
+      if (handled) return;
       handled = true;
 
-      console.log("🔁 Callback recibido desde:", targetUrl);
+      console.log("Callback recibido desde:", targetUrl);
 
       try {
         const codeMatch = targetUrl.match(/[?&]code=([^&]+)/);
@@ -94,7 +84,6 @@ async function loginWithGoogle() {
           oAuth2Client.setCredentials(tokens);
           store.set('google_token', tokens);
 
-          // Obtener info del perfil del usuario
           const oauth2 = google.oauth2({ version: 'v2', auth: oAuth2Client });
           const { data: userInfo } = await oauth2.userinfo.get();
 
@@ -103,7 +92,7 @@ async function loginWithGoogle() {
           authWindow.close();
           resolve({ tokens, user: userInfo });
         } else {
-          handled = false; // Si no se encontró el code, permitimos reintentar
+          handled = false;
         }
       } catch (err) {
         console.error("Error en handleCallback:", err);
@@ -112,7 +101,6 @@ async function loginWithGoogle() {
       }
     };
 
-    // Algunos redireccionamientos usan `did-navigate`, otros `will-redirect`
     authWindow.webContents.on('will-redirect', (event, targetUrl) => {
       handleCallback(targetUrl);
     });
@@ -127,9 +115,6 @@ async function loginWithGoogle() {
   });
 }
 
-/**
- * Devuelve un cliente autenticado (si no existe, lanza login).
- */
 async function getAuthenticatedClient() {
   const client = getOAuthClient();
 
@@ -137,7 +122,6 @@ async function getAuthenticatedClient() {
     await loginWithGoogle();
   }
 
-  // Guarda automáticamente los tokens si se renuevan
   client.on('tokens', (tokens) => {
     if (tokens.refresh_token || tokens.access_token) {
       store.set('google_token', { ...store.get('google_token'), ...tokens });
@@ -147,16 +131,10 @@ async function getAuthenticatedClient() {
   return client;
 }
 
-/**
- * Cierra sesión borrando el token almacenado.
- */
 function logoutGoogle() {
   store.delete('google_token');
 }
 
-/**
- * Obtiene eventos del calendario (método adicional opcional).
- */
 async function getCalendarEvents() {
   const client = await getAuthenticatedClient();
   const calendar = google.calendar({ version: 'v3', auth: client });

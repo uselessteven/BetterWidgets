@@ -2,7 +2,6 @@ const path = require("path");
 const { getAuthenticatedClient, loginWithGoogle, logoutGoogle } = require(path.join(__dirname, "src/auth/googleAuth.js"));
 const { app, BrowserWindow, ipcMain } = require("electron");
 const fs = require("fs");
-
 let win;
 
 function createWindow() {
@@ -93,6 +92,17 @@ app.whenReady().then(() => {
 		}
 	});
 
+	ipcMain.handle("get-calendar-events", async () => {
+		try {
+			const { getCalendarEvents } = require(path.join(__dirname, "src/auth/googleAuth.js"));
+			const events = await getCalendarEvents();
+			console.log("EVENTOS OBTENIDOS DESDE GOOGLE CALENDAR:", events);
+			return { ok: true, events };
+		} catch (err) {
+			console.error("Error al obtener eventos de Google Calendar:", err);
+			return { ok: false, error: err.message };
+		}
+	});
 });
 
 function captureScreenshot() {

@@ -1,5 +1,3 @@
-
-/* --- Title bar --- */
 #titlebar {
 	position: fixed;
 	top: 0;
@@ -18,7 +16,6 @@
 	user-select: none;
 }
 
-/* --- Logo + descripción (izquierda) --- */
 .descriptionBar {
 	display: flex;
 	align-items: center;
@@ -35,7 +32,6 @@
 	user-select: none;
 }
 
-/* --- Controles de ventana (derecha) --- */
 .window-controls {
 	display: flex;
 	align-items: center;

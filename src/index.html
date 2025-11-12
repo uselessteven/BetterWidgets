@@ -14,6 +14,7 @@
 		<div class="window-controls">
 			<button class="menu-btn" id="loginBtn">Iniciar sesion</button>
 			<button class="menu-btn" id="logoutBtn">Cerrar sesión</button>
+			<button id="btn-cargar-eventos">Cargar eventos</button>
 		</div>
 		<div class="window-controls">
 			<button id="min-btn">
@@ -84,7 +85,6 @@
 				alert("Error: " + res.error);
 			}
 		});
-
 		document.getElementById("logoutBtn").addEventListener("click", async () => {
 			const res = await window.electronAPI.logoutGoogle();
 			if (res.success) {

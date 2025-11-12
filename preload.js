@@ -11,5 +11,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
     captureScreenshot: () => ipcRenderer.send('capture-screenshot'),
     onScreenshotSaved: (callback) => ipcRenderer.on('screenshot-saved', callback),
 	loginWithGoogle: () => ipcRenderer.invoke('google-login'),
-	logoutGoogle: () => ipcRenderer.invoke('google-logout')
+	logoutGoogle: () => ipcRenderer.invoke('google-logout'),
+	getCalendarEvents: () => ipcRenderer.invoke("get-calendar-events"),
 });
