@@ -1,25 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="renderBouquet.js" defer></script>
-  </head>
-
-  <body>
-    <div class="bouquetDiv">
-      <h1>Para <span id="lover-name"></span></h1>
-      <div class="bouquet">
-        <img id="vase" class="vase-layer" src="" alt="Vase" />
-        <img id="flower1" class="flower-layer" src="" alt="Flower 1" />
-        <img id="flower2" class="flower-layer" src="" alt="Flower 2" />
-        <img id="flower3" class="flower-layer" src="" alt="Flower 3" />
-        <img id="flower4" class="flower-layer" src="" alt="Flower 4" />
-      </div>
-      <p><span id="lover-msg"></span></p>
-      <button id="screenshot-btn">Guardar</button>
-      <button id="restart-btn">Inicio</button>
-    </div>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
+	<div class="dashDiv">
+		<div class="top-section">
+			<div class="mainDiv">
+				<div class="bouquetDiv">
+					<h1>Para <span id="lover-name"></span></h1>
+					<div class="bouquet">
+						<div class="flowers">
+							<img id="flower1" class="flower-layer" src="" alt="Flower 1" />
+							<img id="flower2" class="flower-layer" src="" alt="Flower 2" />
+							<img id="flower3" class="flower-layer" src="" alt="Flower 3" />
+						</div>
+						<div class="vase-div">
+							<img id="vase" class="vase-layer" src="" alt="Vase" />
+						</div>
+					</div>
+					<p><span id="lover-msg"></span></p>
+				</div>
+			</div>
+		</div>
+		<div class="menu-container">
+			<button class="menu-btn" id="restart-btn"><img src="../../assets/back.png"/></button>
+			<button class="menu-btn" id="screenshot-btn"><img src="../../assets/next.png"/></button>
+		</div>
+	</div>
+	<script src="renderBouquet.js" defer></script>
+	<script src="../render.js"></script>
+</body>
 </html>

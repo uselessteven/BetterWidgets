@@ -1,434 +1,408 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "VT323", monospace;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	object-fit: contain;
 }
 
-/*------ HOME PAGE ------*/
-.mainDiv {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
+html {
+	padding: 40px 50px 20px 50px;
+	background-image: url('../../assets/background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	image-rendering: pixelated;
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
 }
 
-.mainDiv img {
-    width: 256px;
-    height: 256px;
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.dashDiv {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	overflow: hidden;
+	gap: 5px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 10%;
+	padding-right: 10%;
+	position: relative;
+}
+
+.dashDiv * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	object-fit: contain;
+}
+
+.top-section {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+	background-image: url('../../assets/todo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	image-rendering: pixelated;
+	background-color: transparent;
+}
+
+.top-section * {
+	max-width: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+	object-fit: contain;
+	overflow: hidden;
+}
+
+.title-center {
+	padding: 10px;
+}
+
+.mainDiv{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 .mainDiv h1 {
+	text-align: center;
     font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 40px;
-    font-weight: 400;
+    font-weight: bold;
+    font-size: 30px;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+    text-align: center;
 }
 
-.mainDiv hr {
-    width: 400px;
-    margin-bottom: 16px;
-    border: 2px solid #fff;
-    border-radius: 25px;
+.mainDiv img {
+	width: 100%;
+	height: 100%;
+	image-rendering: pixelated;
 }
 
 .mainDiv p {
-    width: 400px;
-    margin-bottom: 40px;
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-}
-
-.mainDiv button {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
+	width: 400px;
+	font-family: "VT323", monospace;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+	font-size: 14px;
+	text-align: center;
 }
 
 .mainDiv button:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
+	transform: scale(1.1) perspective(1px);
+	transition: 0.3s ease;
+	cursor: pointer;
 }
 
-/*------ CHOOSE YOUR FLOWERS ------*/
-
-.flowersDiv {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
+.mainDivB{
+	display: flex;
+	flex-direction: column;
+	width: 256px;
+	height: 256px;
+	justify-content: center;
+	align-items: center;
 }
 
-.flowersDiv h1 {
+.mainDivB h1 {
+	text-align: center;
     font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 48px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
     text-align: center;
 }
 
-.flowersDiv .carousel {
-    width: 256px;
-    height: 256px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
+.mainDivB img {
+	width: 100%;
+	height: 100%;
+	image-rendering: pixelated;
+}
+
+.mainDivB p {
+	width: 400px;
+	font-family: "VT323", monospace;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+	font-size: 14px;
+	text-align: center;
+}
+
+.mainDivB button:hover {
+	transform: scale(1.1) perspective(1px);
+	transition: 0.3s ease;
+	cursor: pointer;
+}
+
+.carousel {
+	width: 256px;
+	height: 256px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .slide {
-    width: 256px;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    list-style: none;
-    opacity: 0;
+	width: 256px;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	list-style: none;
+	opacity: 0;
 }
 
-.slide>img {
-    display: block;
-    width: 256px;
-    height: 256px;
-}
-
-.slide[data-active] {
-    opacity: 1;
-}
-
-.carousel-button {
-    width: 64px;
-    height: 64px;
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 0 .5rem;
-}
-
-.carousel-button img {
-    width: 64px;
-    height: 64px;
-}
-
-.carousel-button.prev {
-    left: -80px;
-}
-
-.carousel-button.next {
-    right: -80px;
-}
-
-.flowersDiv .next-step {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.flowersDiv .next-step:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
-/*------ CHOOSE YOUR VASE ------*/
-
-.vaseDiv {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
-}
-
-.vaseDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 48px;
-    text-align: center;
-}
-
-.vaseDiv .carousel {
-    width: 256px;
-    height: 256px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.slide {
-    width: 256px;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    list-style: none;
-    opacity: 0;
-}
-
-.slide>img {
-    display: block;
-    width: 256px;
-    height: 256px;
+.slide > img {
+	display: block;
+	width: 256px;
+	height: 256px;
+	image-rendering: pixelated;
 }
 
 .slide[data-active] {
-    opacity: 1;
+	opacity: 1;
 }
 
 .carousel-button {
-    width: 64px;
-    height: 64px;
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 0 .5rem;
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	z-index: 2;
+	background: none;
+	border: none;
+	top: 50%;
+	cursor: pointer;
+	padding: 0.5rem;
 }
 
 .carousel-button img {
-    width: 64px;
-    height: 64px;
+	width: 64px;
+	height: 64px;
+	image-rendering: pixelated;
 }
 
 .carousel-button.prev {
-    left: -80px;
+    left: -10px;
 }
 
 .carousel-button.next {
-    right: -80px;
+    right: -10px;
 }
-
-.vaseDiv .next-step {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.vaseDiv .next-step:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
-/*------ WRITE YOUR MESSAGE ------*/
 
 .msgDiv {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    justify-content: center;
-    align-items: center;
-}
-
-.msgDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 48px;
-    text-align: center;
-}
-
-.msgDiv label {
-    margin-bottom: 8px;
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 14px;
-}
-
-.msgDiv input {
-    border: none;
-    border-radius: 25px;
-    height: 24px;
-    margin-bottom: 40px;
-    padding: 16px;
-}
-
-.msgDiv .final-step {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.msgDiv .final-step:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 /*------ RENDERING BOUQUET ------*/
+.bouquetDiv h1 {
+	text-align: center;
+    font-family: "VT323", monospace;
+	font-size: 32px;
+    font-weight: bold;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+}
+
+.bouquetDiv p {
+	width: 80%;
+	font-family: "VT323", monospace;
+	font-size: 16px;
+    font-weight: bold;
+    color: #56160C;
+    text-shadow: -2px 2px 0 #E09650;
+	max-width: 600px;
+	text-align: center;
+}
 
 .bouquetDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	padding: 20px;
+}
+
+.bouquet {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vase-div{
+	position: absolute;
+    z-index: 0;
+	height: 40%;
+	bottom: 32px;
+}
+
+.vase-layer {
+    position: relative;
+    overflow: hidden; 
+	z-index: 0;
+	bottom: 1px;
+}
+
+.vase-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.flowers {
+    position: relative;
+    z-index: 1;
+    height: 50%;
+	width: 30%;
+    box-sizing: border-box;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: rgb(239, 170, 176);
-    background-size: cover;
-    background-blend-mode: overlay;
-    text-align: center;
-}
-
-.bouquetDiv h1 {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-.bouquet {
-    position: relative;
-    width: 200px;
-    height: 300px;
-}
-
-.vase-layer {
-    position: absolute;
-    bottom: 0;
-    width: 200px;
-    height: 200px;
-    left: 50%;
-    transform: translateX(-51%);
-    z-index: 5;
+	bottom: 34px;
 }
 
 .flower-layer {
     position: absolute;
-    width: 80%;
-    left: 10%;
-    top: 20px;
+    width: 25px;
+    height: 25px;
+    transform: translate(-50%, -50%);
     z-index: 1;
-    transform-origin: bottom center;
+	overflow: hidden; 
+}
+
+.flower-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 #flower1 {
-    transform: rotate(-30deg);
-    z-index: 1;
+	transform: rotate(-30deg);
+	width: 200px;
+	left: -30px;
+	bottom: -12px;
+	z-index: 1;
 }
 
 #flower2 {
-    transform: rotate(-5deg);
-    z-index: 2;
+	transform: rotate(0deg);
+	width: 200px;
+	bottom: -8px;
+	z-index: 3;
 }
 
 #flower3 {
-    transform: rotate(5deg);
-    z-index: 3;
-}
-
-#flower4 {
-    transform: rotate(30deg);
-    z-index: 4;
-}
-
-.bouquetDiv p {
-    font-family: "VT323", monospace;
-    color: #fff;
-    font-size: 16px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
-    margin-bottom: 32px;
-}
-
-.bouquetDiv #screenshot-btn {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.bouquetDiv #screenshot-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
-}
-
-.bouquetDiv #restart-btn {
-    font-family: "VT323", monospace;
-    color: #fff;
-    padding: 16px;
-    background-color: #E86975;
-    outline: none;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px #222;
-}
-
-.bouquetDiv #restart-btn:hover {
-    transform: scale(1.1) perspective(1px);
-    transition: 0.3 ease;
-    cursor: pointer;
+	transform: rotate(30deg);
+	width: 200px;
+	right: -30px;
+	bottom: -12px;
+	z-index: 2;
 }
 
 .hidden {
-    opacity: 0;
-    pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/*------ BOTONES ------*/
+.menu-container {
+	position: relative;
+	bottom: auto;
+	width: 100%;
+	max-width: 100%;
+	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 8px;
+	z-index: 900;
+	box-sizing: border-box;
+	overflow: hidden;
+	background-color: transparent;
+	image-rendering: pixelated;
+}
+
+.menu-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: auto;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	transition: transform 0.2s ease, filter 0.2s ease;
+	image-rendering: pixelated;
+	flex-shrink: 0;
+}
+
+.menu-btn:hover {
+	transform: scale(1.05);
+	filter: brightness(1.2);
+}
+
+.menu-btn img {
+	height: 100%;
+	width: auto;
+	image-rendering: pixelated;
+	object-fit: contain;
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	pointer-events: none;
 }

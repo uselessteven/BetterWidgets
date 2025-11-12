@@ -1,56 +1,83 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
 
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="chooseFlowers.js" defer></script>
-  </head>
+	<div class="dashDiv">
+		<div class="top-section">
+			<div class="mainDiv">
+				<div class="title-center">
+					<h1>
+						Selecciona tus flores <br />
+						<span id="flowersLeft"></span>
+					</h1>
+				</div>
+				<div class="carousel" data-carousel>
+					<div class="carousel-button-div">
+						<button class="carousel-button prev" data-carousel-button="prev">
+							<img src="../../assets/arrow-left.png" alt="" />
+						</button>
+					</div>
+					<div class="carousel-img">
+						<ul data-slides>
+							<li class="slide" data-active id="rose">
+								<img src="../../assets/rose.gif" alt="Flower 1" />
+							</li>
+							<li class="slide" id="lily">
+								<img src="../../assets/lys.gif" alt="Flower 2" />
+							</li>
+							<li class="slide" id="sunflower">
+								<img src="../../assets/sunflower.gif" alt="Flower 3" />
+							</li>
+							<li class="slide" id="tulip">
+								<img src="../../assets/tulip.gif" alt="Flower 4" />
+							</li>
+							<li class="slide" id="babies-breath">
+								<img src="../../assets/babies-breath.gif" alt="Flower 5" />
+							</li>
+							<li class="slide" id="daisy">
+								<img src="../../assets/daisy.gif" alt="Flower 6" />
+							</li>
+						</ul>
+					</div>
+					<div class="carousel-button-div">
+						<button class="carousel-button next" data-carousel-button="next">
+							<img src="../../assets/arrow-right.png" alt="" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu-container">
+			<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+			<button class="menu-btn" id="next-step"><img src="../../assets/next-r.png"/></button>
+		</div>
+	</div>
 
-  <body>
-    <div class="flowersDiv">
-      <h1>
-        Selecciona tus flores <br />
-        <span id="flowersLeft"></span>
-      </h1>
-
-      <div class="carousel" data-carousel>
-        <button class="carousel-button prev" data-carousel-button="prev">
-          <img src="../../assets/arrow-left.png" alt="" />
-        </button>
-
-        <button class="carousel-button next" data-carousel-button="next">
-          <img src="../../assets/arrow-right.png" alt="" />
-        </button>
-
-        <ul data-slides>
-          <li class="slide" data-active id="rose">
-            <img src="../../assets/rose.gif" alt="Flower 1" />
-          </li>
-
-          <li class="slide" id="lily">
-            <img src="../../assets/lys.gif" alt="Flower 2" />
-          </li>
-
-          <li class="slide" id="sunflower">
-            <img src="../../assets/sunflower.gif" alt="Flower 3" />
-          </li>
-
-          <li class="slide" id="tulip">
-            <img src="../../assets/tulip.gif" alt="Flower 4" />
-          </li>
-
-          <li class="slide" id="babies-breath">
-            <img src="../../assets/babies-breath.gif" alt="Flower 5" />
-          </li>
-
-          <li class="slide" id="daisy">
-            <img src="../../assets/daisy.gif" alt="Flower 6" />
-          </li>
-        </ul>
-      </div>
-      <button class="next-step">Seleccionar</button>
-    </div>
-  </body>
+	<script src="../render.js"></script>
+	<script src="chooseFlowers.js" defer></script>
+	<script>
+		document.getElementById("restart-btn").addEventListener("click", () => {
+			window.electronAPI.loadPage("src/bouquete/bouquete.html");
+		});
+	</script>
+</body>
 </html>

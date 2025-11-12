@@ -1,31 +1,47 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
+	<div class="dashDiv">
+		<div class="top-section">
+			<div class="mainDivB">
+				<img src="../../assets/bouquet.gif" alt="Bouquet de fleurs" />
+				<h1>Mi ramo de San Valentin</h1>
+				<p> &#9829; Crea tu propio ramo de San Valentin &#9829; </p>
+			</div>
+		</div>
+		<div class="menu-container">
+			<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+			<button class="menu-btn" id="create-bouquet"><img src="../../assets/next-r.png"/></button>
+		</div>
+	</div>
 
-  <body>
-    <div class="mainDiv">
-      <img src="../../assets/bouquet.gif" alt="Bouquet de fleurs" />
-      <h1>Mi ramo de San Valentin</h1>
-      <hr />
-      <p>
-        &#9829; Crea tu propio ramo de San Valentin &#9829;
-      </p>
-      <button id="create-bouquet">Crear mi ramo</button>
-    </div>
-
-    <script>
-      document
-        .getElementById("create-bouquet")
-        .addEventListener("click", () => {
-          window.electronAPI.loadPage("src/bouquete/chooseFlowers.html");
-        });
-      document.getElementById("restart-btn").addEventListener("click", () => {
-        window.electronAPI.loadPage("src/index.html");
-      });
-    </script>
-  </body>
+	<script src="../render.js"></script>
+	<script>
+		document.getElementById("create-bouquet").addEventListener("click", () => {
+			window.electronAPI.loadPage("src/bouquete/chooseFlowers.html");
+		});
+		document.getElementById("restart-btn").addEventListener("click", () => {
+			window.electronAPI.loadPage("src/index.html");
+		});
+	</script>
+</body>
 </html>

@@ -1,73 +1,84 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="dashboardDiv">
-      <div class="emotionDiv">
-        <h2>Como me siento hoy?</h2>
-        <div class="emoBtn">
-          <button id="btn1" class="btn">
-            <img src="../../assets/happy.png" alt="happy face" />Feliz
-          </button>
-          <button id="btn2" class="btn">
-            <img src="../../assets/loved.png" alt="loved face" />Enamorado
-          </button>
-          <button id="btn3" class="btn">
-            <img
-              src="../../assets/confident.png"
-              alt="confident face"
-            />Confiado
-          </button>
-          <button id="btn4" class="btn">
-            <img src="../../assets/playful.png" alt="playful face" />Alegre
-          </button>
-          <button id="btn5" class="btn">
-            <img
-              src="../../assets/embarrassed.png"
-              alt="embarrassed face"
-            />Apenado
-          </button>
-          <button id="btn6" class="btn">
-            <img src="../../assets/angry.png" alt="angry face" />Enojado
-          </button>
-          <button id="btn7" class="btn">
-            <img src="../../assets/scared.png" alt="scared face" />Asustado
-          </button>
-          <button id="btn8" class="btn">
-            <img src="../../assets/sad.png" alt="sad face" />Triste
-          </button>
-        </div>
-      </div>
-
-      <div class="bottomDiv">
-        <div class="explainFeels">
-          <h2>Que te hizo sentir asi?</h2>
-          <textarea
-            name="feelInput"
-            id="feelInput"
-            rows="4"
-            cols="48"
-          ></textarea>
-        </div>
-
-        <div class="wishTmr">
-          <h2>Como quisieras sentirte mañana?</h2>
-          <textarea
-            name="wishInput"
-            id="wishInput"
-            rows="4"
-            cols="48"
-          ></textarea>
-        </div>
-      </div>
-      <button id="save-btn">Guardar</button>
-      <button id="exit-btn">Salir</button>
-    </div>
-
-    <script src="writeToday.js"></script>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
+	<div class="dashDiv">
+		<div class="feelings">
+			<div class="top-section">
+				<div class="dashboardDiv">
+					<div class="emotionDiv">
+						<div class="center-top">
+							<h2>Como me siento hoy?</h2>
+						</div>
+						<div class="emoBtn">
+							<button id="btn1" class="btn">
+								<img src="../../assets/happy.gif" alt="happy face" />Feliz
+							</button>
+							<button id="btn2" class="btn">
+								<img src="../../assets/loved.gif" alt="loved face" />Enamorado
+							</button>
+							<button id="btn4" class="btn">
+								<img src="../../assets/playful.gif" alt="playful face" />Alegre
+							</button>
+							<button id="btn5" class="btn">
+								<img src="../../assets/embarrassed.gif" alt="embarrassed face" />Apenado
+							</button>
+							<button id="btn6" class="btn">
+								<img src="../../assets/angry.gif" alt="angry face" />Enojado
+							</button>
+							<button id="btn7" class="btn">
+								<img src="../../assets/scared.gif" alt="scared face" />Asustado
+							</button>
+							<button id="btn8" class="btn">
+								<img src="../../assets/sad.gif" alt="sad face" />Triste
+							</button>
+						</div>
+					</div>
+					<div class="bottomDiv">
+						<div class="explainDiv">
+							<div class="center-top-final">
+								<h2>Que te hizo sentir asi?</h2>
+							</div>
+							<div class="explainFeels">
+								<textarea name="feelInput" id="feelInput" rows="4" cols="48"></textarea>
+							</div>
+						</div>
+						<div class="wishDiv">
+							<div class="center-top-final">
+								<h2>Como quisieras sentirte mañana?</h2>
+							</div>
+							<div class="wishTmr">
+								<textarea name="wishInput" id="wishInput" rows="4" cols="48"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="menu-container">
+				<button class="menu-btn" id="exit-btn"><img src="../../assets/back-l.png"/></button>
+				<button class="menu-btn" id="save-btn"><img src="../../assets/next-r.png"/></button>
+			</div>
+		</div>
+	</div>
+	<script src="writeToday.js"></script>
+	<script src="../render.js"></script>
+</body>
 </html>

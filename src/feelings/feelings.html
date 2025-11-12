@@ -1,21 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="mainDiv">
-      <div class="titleDiv">
-        <span class="text immobile">Este dia me siento </span>
-        <span class="text mobile"></span>
-      </div>
-      <div class="btnDiv">
-        <button id="start-btn">Como te sientes?</button>
-        <button id="restart-btn">Inicio</button>
-      </div>
-    </div>
-    <script src="feelings.js"></script>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
+	<div class="dashDiv">
+		<div class="feelings">
+			<div class="top-section">
+				<div class="mainDiv">
+					<div class="titleDiv">
+						<span class="text immobile">Este dia me siento </span>
+						<span class="text mobile"></span>
+					</div>
+				</div>
+			</div>
+			<div class="menu-container">
+				<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
+				<button class="menu-btn" id="start-btn"><img src="../../assets/next-r.png"/></button>
+			</div>
+		</div>
+	</div>
+	<script src="feelings.js"></script>
+	<script src="../render.js"></script>
+</body>
 </html>

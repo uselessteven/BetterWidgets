@@ -1,34 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="finalDiv">
-      <h1 id="final-title"></h1>
-
-      <div class="center-image">
-        <img
-          src="../../assets/FinishGood.png"
-          alt="Center image"
-          id="successTasks"
-          hidden
-        />
-        <img
-          src="../../assets/FinishMid.png"
-          alt="Center image"
-          id="unsuccessTasks"
-          hidden
-        />
-      </div>
-      <span id="conclusion"></span>
-      <button id="restart-btn">Inicio</button>
-    </div>
-    <script src="finishDay.js">
-      const restartBtn = document.getElementById("restart-btn");
-      restartBtn.addEventListener("click", () => {window.electronAPI.loadPage("index.html");})
-    </script>
-  </body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="../render.css" />
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../../assets/icon.png" alt="Logo" />
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="close-btn">
+				<img src="../../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
+	<div class="dashDiv">
+		<div class="todo">
+			<div class="top-final">
+				<div class="center-top">
+					<h1 id="final-title"></h1>
+				</div>
+			</div>
+			<div class="bottom-final">
+				<div class="center-image">
+					<img src="../../assets/FinishGood.png" alt="Center image" id="successTasks" hidden />
+					<img src="../../assets/FinishMid.png" alt="Center image" id="unsuccessTasks" hidden />
+				</div>
+				<span id="conclusion"></span>				
+			</div>
+		</div>
+		<div class="menu-container">
+			<button class="menu-btn" id="home-btn"><img src="../../assets/back.png"/></button>
+		</div>
+	</div>
+	<script src="finishDay.js"></script>
+	<script src="../render.js"></script>
+	<script src="todo.js"></script>
+</body>
 </html>

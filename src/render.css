@@ -1,0 +1,68 @@
+
+/* --- Title bar --- */
+#titlebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 40px;
+	padding: 0 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1000;
+	background: transparent;
+	backdrop-filter: none;
+	-webkit-app-region: drag;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+/* --- Logo + descripción (izquierda) --- */
+.descriptionBar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	-webkit-app-region: no-drag;
+	user-select: none;
+}
+
+.descriptionBar img {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	-webkit-user-drag: none;
+	user-select: none;
+}
+
+/* --- Controles de ventana (derecha) --- */
+.window-controls {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	-webkit-app-region: no-drag;
+	user-select: none;
+}
+
+.window-controls button {
+	background: transparent;
+	border: none;
+	padding: 4px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: filter 0.2s ease;
+}
+
+.window-controls button img {
+	width: 24px;
+	height: 24px;
+	pointer-events: none;
+	-webkit-user-drag: none;
+	user-select: none;
+}
+
+.window-controls button:hover {
+	filter: brightness(1.4);
+}
