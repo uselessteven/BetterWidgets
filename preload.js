@@ -13,4 +13,5 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	loginWithGoogle: () => ipcRenderer.invoke('google-login'),
 	logoutGoogle: () => ipcRenderer.invoke('google-logout'),
 	getCalendarEvents: () => ipcRenderer.invoke("get-calendar-events"),
+	onGoogleLogout: (callback) => ipcRenderer.on("google-logged-out", callback),
 });

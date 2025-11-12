@@ -46,6 +46,12 @@
 		document.head.appendChild(style);
 	}
 
+	function limpiarEventosCalendario() {
+		const spans = document.querySelectorAll(".days-month span.event-day");
+		spans.forEach(span => span.classList.remove("event-day"));
+		console.log("Eventos limpiados del calendario tras cerrar sesión.");
+	}
+
 	function buildCalendar() {
 		const daysContainer = document.querySelector(".days-month");
 		if (!daysContainer) {
@@ -61,7 +67,8 @@
 		let firstDay = new Date(year, month, 1).getDay();
 		firstDay = firstDay === 0 ? 6 : firstDay - 1;
 		const realDaysInMonth = new Date(year, month + 1, 0).getDate();
-		console.info(`calendario.js: año=${year}, mes=${month}, primerDia=${firstDay}, dias=${realDaysInMonth}, hoy=${currentDay}`);
+
+		console.info(`calendario.js: año=${year}, mes=${month + 1}, primerDia=${firstDay}, dias=${realDaysInMonth}, hoy=${currentDay}`);
 
 		let day = 1;
 		for (let i = 0; i < 28; i++) {
@@ -77,11 +84,9 @@
 				span.dataset.month = month;
 				span.dataset.year = year;
 
-				console.log(`Día ${day} → data-day=${span.dataset.day}`);
-
 				const img = document.createElement("img");
 				img.src = `../assets/${day}.png`;
-				img.alt = `dia ${day}`;
+				img.alt = `día ${day}`;
 
 				img.onerror = function () {
 					img.style.display = "none";
@@ -105,27 +110,36 @@
 		}
 	}
 
+	async function cargarEventosGoogle() {
+		console.log("Solicitando eventos desde Google Calendar...");
+		const result = await window.electronAPI.getCalendarEvents();
+		if (result.ok) {
+			console.log("Eventos obtenidos:", result.events);
+
+			buildCalendar();
+
+			const { marcarEventosEnCalendarioGoogle } = await import("./GoogleCalendar.js");
+			await marcarEventosEnCalendarioGoogle(result.events);
+		} else {
+			console.error("Error al obtener eventos de Google Calendar:", result.error);
+		}
+	}
+
 	async function start() {
 		ensureStyles();
 		buildCalendar();
 
 		const btn = document.getElementById("btn-cargar-eventos");
-		if (!btn) {
-			console.error("No se encontro el boton #btn-cargar-eventos");
-			return;
+		if (btn) btn.addEventListener("click", cargarEventosGoogle);
+
+		await cargarEventosGoogle();
+
+		if (window.electronAPI.onGoogleLogout) {
+			window.electronAPI.onGoogleLogout(() => {
+				console.log("🔒 Usuario cerró sesión → limpiando calendario.");
+				limpiarEventosCalendario();
+			});
 		}
-
-		btn.addEventListener("click", async () => {
-			console.log("Solicitando eventos desde Google Calendar...");
-			const result = await window.electronAPI.getCalendarEvents();
-
-			if (result.ok) {
-				const { marcarEventosEnCalendarioGoogle } = await import("./GoogleCalendar.js");
-				await marcarEventosEnCalendarioGoogle(result.events);
-			} else {
-				console.error("Error al obtener eventos:", result.error);
-			}
-		});
 	}
 
 	if (document.readyState === "loading") {

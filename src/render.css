@@ -62,3 +62,26 @@
 .window-controls button:hover {
 	filter: brightness(1.4);
 }
+
+.widget-controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    -webkit-app-region: no-drag;
+    user-select: none;
+}
+
+.sesion-btn{
+	height: 100%;
+	background-color: transparent;
+	background: transparent;
+	border: none;
+	padding: 4px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: filter 0.2s ease;
+}
