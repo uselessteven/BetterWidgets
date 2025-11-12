@@ -64,16 +64,16 @@
 }
 
 .widget-controls {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    -webkit-app-region: no-drag;
-    user-select: none;
+	width: 30%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	-webkit-app-region: no-drag;
+	user-select: none;
 }
 
-.sesion-btn{
+.sesion-btn {
 	height: 100%;
 	background-color: transparent;
 	background: transparent;

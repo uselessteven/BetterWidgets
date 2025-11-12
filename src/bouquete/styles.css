@@ -233,7 +233,6 @@ body {
 	text-align: center;
 }
 
-/*------ RENDERING BOUQUET ------*/
 .bouquetDiv h1 {
 	text-align: center;
     font-family: "VT323", monospace;
@@ -357,7 +356,6 @@ body {
 	pointer-events: none;
 }
 
-/*------ BOTONES ------*/
 .menu-container {
 	position: relative;
 	bottom: auto;

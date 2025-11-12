@@ -90,7 +90,7 @@ app.whenReady().then(() => {
 	ipcMain.handle("google-logout", async () => {
 		try {
 			logoutGoogle();
-			console.log("👋 Sesión de Google cerrada correctamente.");
+			console.log("Sesión de Google cerrada correctamente.");
 			if (win && win.webContents) {
 				win.webContents.send("google-logged-out");
 			}

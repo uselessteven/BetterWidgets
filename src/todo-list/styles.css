@@ -20,7 +20,6 @@ html {
 	height: 100%;
 }
 
-
 body {
 	margin: 0;
 	width: 100%;
@@ -102,7 +101,7 @@ body {
 	font-size: 26px;
 	color: #56160C;
 	font-weight: bold;
-	text-shadow: -2px 2px 0 #E09650; 
+	text-shadow: -2px 2px 0 #E09650;
 	font-weight: 600;
 }
 
@@ -111,7 +110,7 @@ body {
 	font-size: 40px;
 	color: #56160C;
 	font-weight: bold;
-	text-shadow: -2px 2px 0 #E09650; 
+	text-shadow: -2px 2px 0 #E09650;
 	background-color: transparent;
 	padding: 8px 12px;
 }
@@ -121,7 +120,7 @@ body {
 	font-size: 20px;
 	color: #56160C;
 	font-weight: bold;
-	text-shadow: -2px 2px 0 #E09650; 
+	text-shadow: -2px 2px 0 #E09650;
 }
 
 .right-section {
@@ -136,67 +135,67 @@ body {
 }
 
 .progression {
-    height: 20%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
+	height: 20%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
 }
 
 #progress-bar {
-    appearance: none;
-    width: calc(100% - 6%);
-    height: 100%;
-    border-radius: 10px;
-    position: relative;
-    z-index: 1;
-    margin-left: 5%;
-    margin-right: 1%;
-    box-sizing: border-box;
+	appearance: none;
+	width: calc(100% - 6%);
+	height: 100%;
+	border-radius: 10px;
+	position: relative;
+	z-index: 1;
+	margin-left: 5%;
+	margin-right: 1%;
+	box-sizing: border-box;
 }
 
 #progress-bar::-webkit-progress-bar {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 #progress-bar::-webkit-progress-value {
-    background-color: #3DFF00;
-    border-right: 10px solid #13d500;
-    transition: width 1s ease-in-out;
+	background-color: #3DFF00;
+	border-right: 10px solid #13d500;
+	transition: width 1s ease-in-out;
 }
 
 .progress-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url('../../assets/barra-progreso-empty.png');
-    background-size: contain;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url('../../assets/barra-progreso-empty.png');
+	background-size: contain;
 	background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    pointer-events: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	image-rendering: pixelated;
+	pointer-events: none;
 }
 
 .progress-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../../assets/barra-progreso.png');
-    background-size: contain;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('../../assets/barra-progreso.png');
+	background-size: contain;
 	background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    image-rendering: pixelated;
-    z-index: 900;
-    pointer-events: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	image-rendering: pixelated;
+	z-index: 900;
+	pointer-events: none;
 }
 
 .add-task {
@@ -239,7 +238,7 @@ body {
 	font-size: 16px;
 	color: #56160C;
 	font-weight: bold;
-	text-shadow: -2px 2px 0 #E09650; 
+	text-shadow: -2px 2px 0 #E09650;
 }
 
 .add-task button {
@@ -295,7 +294,7 @@ body {
 	padding: 20px;
 	box-sizing: border-box;
 }
- 
+
 .bottom-section .bx {
 	color: #56160C;
 	margin-right: 16px;
@@ -310,7 +309,7 @@ body {
 	font-size: 16px;
 	color: #56160C;
 	font-weight: bold;
-	text-shadow: -2px 2px 0 #E09650; 
+	text-shadow: -2px 2px 0 #E09650;
 	cursor: pointer;
 }
 
@@ -424,7 +423,7 @@ body {
 	padding: 10px;
 }
 
-.top-final > * {
+.top-final>* {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: contain;
@@ -449,11 +448,10 @@ body {
 	font-family: "VT323", monospace;
 	font-weight: bold;
 	text-align: center;
-	text-shadow: -2px 2px 0 #E09650; 
+	text-shadow: -2px 2px 0 #E09650;
 }
 
-
-.center-top > * {
+.center-top>* {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: contain;
@@ -500,5 +498,5 @@ body {
 	color: #56160C;
 	font-weight: bold;
 	text-align: center;
-	text-shadow: -2px 2px 0 #E09650; 
+	text-shadow: -2px 2px 0 #E09650;
 }

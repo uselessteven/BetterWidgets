@@ -5,17 +5,17 @@ El objetivo del proyecto es crear un conjunto de widgets más eficientes, atract
 
 ---
 
-## 🚀 Características principales
+## Características principales
 
-- 🎨 **Interfaz limpia y modular**: cada widget está diseñado para reutilización y personalización.
-- ⚡ **Código optimizado** en JavaScript/HTML/CSS.
-- 🧩 **Arquitectura flexible**: pensada para escalar o integrarse con frameworks.
-- 🛠️ **Configuración automatizada** mediante `forge.config.js`.
-- 🧠 **Enfoque educativo y experimental**: sirve como sandbox para probar nuevas ideas UI.
+- **Interfaz limpia y modular**: cada widget está diseñado para reutilización y personalización.
+- **Código optimizado** en JavaScript/HTML/CSS.
+- **Arquitectura flexible**: pensada para escalar o integrarse con frameworks.
+- **Configuración automatizada** mediante `forge.config.js`.
+- **Enfoque educativo y experimental**: sirve como sandbox para probar nuevas ideas UI.
 
 ---
 
-## 🏗️ Estructura del proyecto
+## Estructura del proyecto
 
 BetterWidgets/
 ├── src/
@@ -31,7 +31,7 @@ BetterWidgets/
 
 ---
 
-## ⚙️ Instalación y ejecución
+## Instalación y ejecución
 
 1. Clona el repositorio
    git clone https://github.com/uselessteven/BetterWidgets.git
@@ -48,17 +48,16 @@ BetterWidgets/
 
 ---
 
-## 🧪 Scripts disponibles
+## Scripts disponibles
 
 Comando            | Descripción
 --------------------|-----------------------------------------------
 npm start           | Inicia la aplicación en modo desarrollo
 npm run build       | Genera una versión optimizada de la app
 npm run lint        | Analiza el código con ESLint (si está configurado)
-
 ---
 
-## 🧭 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - HTML5 / CSS3 / JavaScript (ES6+)
 - Electron Forge (para empaquetado y distribución)
@@ -67,7 +66,7 @@ npm run lint        | Analiza el código con ESLint (si está configurado)
 
 ---
 
-## 🧰 Próximas mejoras (улучшение)
+## Próximas mejoras (улучшение)
 
 - Agregar pruebas unitarias con Jest.
 - Implementar un sistema de temas (light/dark).
@@ -77,13 +76,13 @@ npm run lint        | Analiza el código con ESLint (si está configurado)
 
 ---
 
-## 📸 Capturas o Demo
+## Capturas o Demo
 
 (Agrega aquí imágenes, GIFs o videos de la программа en funcionamiento.)
 
 ---
 
-## 🤝 Contribuir
+## Contribuir
 
 1. Haz un fork del repositorio.
 2. Crea una nueva rama: git checkout -b feature/nueva-funcionalidad
@@ -92,7 +91,7 @@ npm run lint        | Analiza el código con ESLint (si está configurado)
 
 ---
 
-## 📜 Licencia
+## Licencia
 
 Este proyecto está bajo la licencia MIT.
 Puedes usar, modificar y compartir el código libremente, siempre con atribución.

@@ -62,7 +62,7 @@
 					</div>
 				</div>
 				<div class="junimo">
-					<img src="../assets/junimo-stardrop.gif"/>
+					<img src="../assets/junimo-stardrop.gif" />
 				</div>
 			</div>
 		</div>
@@ -77,16 +77,14 @@
 	<script src="../src/weather/weather.js"></script>
 	<script src="./weather/calendario.js"></script>
 	<script>
-		document.getElementById("loginBtn").addEventListener("click", async () => {
-			const res = await window.electronAPI.loginWithGoogle();
+		document.getElementById("loginBtn").addEventListener("click", async () => {const res = await window.electronAPI.loginWithGoogle();
 			if (res.success) {
 				alert("Sesión iniciada correctamente.");
 			} else {
 				alert("Error: " + res.error);
 			}
 		});
-		document.getElementById("logoutBtn").addEventListener("click", async () => {
-			const res = await window.electronAPI.logoutGoogle();
+		document.getElementById("logoutBtn").addEventListener("click", async () => {const res = await window.electronAPI.logoutGoogle();
 			if (res.success) {
 				alert("Sesión cerrada.");
 			} else {

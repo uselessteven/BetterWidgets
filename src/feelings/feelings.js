@@ -32,8 +32,6 @@ const textChange = () => {
 		document.querySelector(".mainDiv").style.backgroundColor = bgColors[index];
 		index = (index + 1) % words.length;
 	};
-	
-
 	updateText();
 	setInterval(updateText, 4000);
 };

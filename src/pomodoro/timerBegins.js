@@ -15,7 +15,7 @@ function startCountdown(durationMins) {
 		let seconds = duration % 60;
 
 		displayTime.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-
+		
 		if (duration > 0) {
 			duration--;
 		} else {

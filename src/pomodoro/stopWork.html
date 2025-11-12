@@ -32,25 +32,18 @@
 				</div>
 			</div>
 			<div class="menu-container">
-				<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png"/></button>
-				<button class="menu-btn" id="start-break-btn"><img src="../../assets/next-r.png"/></button>
+				<button class="menu-btn" id="restart-btn"><img src="../../assets/back-l.png" /></button>
+				<button class="menu-btn" id="start-break-btn"><img src="../../assets/next-r.png" /></button>
 			</div>
 		</div>
 	</div>
 	<script src="../render.js"></script>
 	<script>
-		const taskValue =
-			localStorage.getItem("taskValue") || "No task available";
+		const taskValue =localStorage.getItem("taskValue") || "No task available";
 		const displayTask = document.getElementById("task");
 
-		if (displayTask) {
-			displayTask.textContent = taskValue;
-		}
-		document
-			.getElementById("start-break-btn")
-			.addEventListener("click", () => {
-				window.electronAPI.loadPage("src/pomodoro/startBreak.html");
-			});
+		if (displayTask) {displayTask.textContent = taskValue;}
+		document.getElementById("start-break-btn").addEventListener("click", () => {window.electronAPI.loadPage("src/pomodoro/startBreak.html");});
 		const restartBtn = document.getElementById("restart-btn");
 		restartBtn.addEventListener("click", () => { window.electronAPI.loadPage("src/index.html"); })
 	</script>

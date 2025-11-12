@@ -34,7 +34,7 @@ const removeHoverClasses = () => {
 		"hover-bg7",
 		"hover-bg8"
 	);
-
+	
 	buttons.forEach((btn) => {
 		btn.classList.remove(
 			"hover-btn-bg1",

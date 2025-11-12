@@ -136,7 +136,7 @@
 
 		if (window.electronAPI.onGoogleLogout) {
 			window.electronAPI.onGoogleLogout(() => {
-				console.log("🔒 Usuario cerró sesión → limpiando calendario.");
+				console.log("Usuario cerró sesión → limpiando calendario.");
 				limpiarEventosCalendario();
 			});
 		}
