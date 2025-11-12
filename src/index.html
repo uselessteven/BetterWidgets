@@ -25,30 +25,34 @@
 	<div class="div-container">
 		<div class="top-container">
 			<div class="calendar">
-				<img src="../assets/calendario.png"/>
+				<div class="hoja-calendario">
+					<div class="calendario">
+						<div class="days-month">
+							<span><img src="../assets/1.png" alt="temporada"></span>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="weather">
 				<div class="widget">
 					<div class="clock-weather">
-						<span>A</span>
+						<img src="../assets/flecha.png" alt="clima">
 					</div>
 					<div class="time-zone">
-						<div class="day-month">
-							<span>A</span>
+						<div class="day-month" id="day-month">
 						</div>
 						<div class="weather-temp">
 							<div class="div1">
-								<span>A</span>
+								<img src="../assets/clima.png" alt="clima">
 							</div>
 							<div class="div2">
-								<span>A</span>
+								<span></span>
 							</div>
 							<div class="div3">
-								<span>A</span>
+								<img src="../assets/temporada.png" alt="temporada">
 							</div>
 						</div>
-						<div class="time">
-							<span>A</span>
+						<div class="time" id="clock-time">
 						</div>
 					</div>
 				</div>
@@ -64,5 +68,7 @@
 			<button class="menu-btn" id="bouquet-btn"><span></span></button>
 		</div>
 	</div>
+	<script src="../src/weather/timeWidget.js"></script>
+	<script src="../src/weather/weather.js"></script>
 </body>
 </html>
