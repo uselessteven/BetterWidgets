@@ -1,4 +1,5 @@
 const path = require("path");
+const { getAuthenticatedClient, loginWithGoogle, logoutGoogle } = require(path.join(__dirname, "src/auth/googleAuth.js"));
 const { app, BrowserWindow, ipcMain } = require("electron");
 const fs = require("fs");
 
@@ -24,10 +25,6 @@ function createWindow() {
 	win.loadFile("src/index.html");
 	// win.webContents.openDevTools();
 	ipcMain.on("minimize-window", () => win.minimize());
-	ipcMain.on("maximize-window", () => {
-		if (win.isMaximized()) win.unmaximize();
-		else win.maximize();
-	});
 	ipcMain.on("close-window", () => win.close());
 	ipcMain.on("load-page", (event, page) => win.loadFile(page));
 
@@ -39,9 +36,6 @@ function createWindow() {
 			console.error('Error capturing screenshot:', error);
 		}
 	});
-
-	win.on("maximize", () => win.webContents.send("window-maximized"));
-	win.on("unmaximize", () => win.webContents.send("window-restored"));
 
 	win.webContents.on("did-finish-load", () => {
 		const cursorPath = path.join(__dirname, "assets", "cursor.png").replace(/\\/g, "/");
@@ -79,6 +73,26 @@ app.whenReady().then(() => {
 		fs.writeFileSync(screenshotPath, image.toPNG());
 		return screenshotPath;
 	});
+
+	ipcMain.handle("google-login", async () => {
+		try {
+			const client = await getAuthenticatedClient();
+			return { success: true };
+		} catch (err) {
+			console.error("Google login failed:", err);
+			return { success: false, error: err.message };
+		}
+	});
+
+	ipcMain.handle("google-logout", async () => {
+		try {
+			logoutGoogle();
+			return { success: true };
+		} catch (err) {
+			return { success: false, error: err.message };
+		}
+	});
+
 });
 
 function captureScreenshot() {

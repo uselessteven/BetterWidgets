@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>BetterWidgets</title>
+	<link rel="stylesheet" href="index.css" />
+	<link rel="stylesheet" href="render.css" />
+	<link rel="stylesheet" href="/src/weather/weather.css" />
+	<script src="render.js"></script>
+	<div id="titlebar">
+		<div class="descriptionBar">
+			<img id="logo-btn" src="../assets/icon.png" alt="Logo" />
+		</div>
+
+		<!-- 🧩 Contenedor de usuario -->
+		<div class="user-info" id="userInfo" style="display:flex; align-items:center; gap:10px;">
+			<img id="userPhoto" src="../assets/user-placeholder.png" alt="Usuario" 
+				style="width:32px;height:32px;border-radius:50%;object-fit:cover;display:none;">
+			<span id="userName" style="color:white;font-size:14px;font-weight:bold;display:none;"></span>
+		</div>
+
+		<div class="window-controls">
+			<button class="menu-btn" id="loginBtn">Iniciar sesión</button>
+			<button class="menu-btn" id="logoutBtn">Cerrar sesión</button>
+		</div>
+		<div class="window-controls">
+			<button id="min-btn">
+				<img src="../assets/minimizar.png" alt="Minimizar">
+			</button>
+			<button id="close-btn">
+				<img src="../assets/cerrar.png" alt="Cerrar">
+			</button>
+		</div>
+	</div>
+</head>
+<body>
+	<div class="div-container">
+		<div class="menu-container">
+			<button class="menu-btn" id="loginBtn">Iniciar sesión con Google</button>
+			<button class="menu-btn" id="logoutBtn">Cerrar sesión</button>
+		</div>
+	</div>
+	<script>
+	document.getElementById("loginBtn").addEventListener("click", async () => {
+		const res = await window.electronAPI.loginWithGoogle();
+		if (res.success) {
+			alert("Sesión iniciada correctamente.");
+		} else {
+			alert("Error: " + res.error);
+		}
+	});
+
+	document.getElementById("logoutBtn").addEventListener("click", async () => {
+		const res = await window.electronAPI.logoutGoogle();
+		if (res.success) {
+			alert("Sesión cerrada.");
+		} else {
+			alert("Error: " + res.error);
+		}
+	});
+	</script>
+</body>
+</html>

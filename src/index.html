@@ -12,6 +12,10 @@
 			<img id="logo-btn" src="../assets/icon.png" alt="Logo" />
 		</div>
 		<div class="window-controls">
+			<button class="menu-btn" id="loginBtn">Iniciar sesion</button>
+			<button class="menu-btn" id="logoutBtn">Cerrar sesión</button>
+		</div>
+		<div class="window-controls">
 			<button id="min-btn">
 				<img src="../assets/minimizar.png" alt="Minimizar">
 			</button>
@@ -71,5 +75,24 @@
 	<script src="../src/weather/timeWidget.js"></script>
 	<script src="../src/weather/weather.js"></script>
 	<script src="./weather/calendario.js"></script>
+	<script>
+		document.getElementById("loginBtn").addEventListener("click", async () => {
+			const res = await window.electronAPI.loginWithGoogle();
+			if (res.success) {
+				alert("Sesión iniciada correctamente.");
+			} else {
+				alert("Error: " + res.error);
+			}
+		});
+
+		document.getElementById("logoutBtn").addEventListener("click", async () => {
+			const res = await window.electronAPI.logoutGoogle();
+			if (res.success) {
+				alert("Sesión cerrada.");
+			} else {
+				alert("Error: " + res.error);
+			}
+		});
+	</script>
 </body>
 </html>

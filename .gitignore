@@ -90,3 +90,6 @@ typings/
 
 # Electron-Forge
 out/
+
+# Ignorar credenciales
+credentials.env
